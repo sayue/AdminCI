@@ -2,8 +2,11 @@
 
 class Home extends CI_Controller{
 	
-	public function index(){
+	public function index()
+	{
 		$this->load->view('home');
+		//$this->session->sess_destroy();
+		print_r($this->session->all_userdata());
 	}
 }
 

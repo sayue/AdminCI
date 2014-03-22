@@ -16,3 +16,20 @@ $(function() {
         }
     })
 })
+
+$(":button[type='submit']").click(function(event){
+	var warn = '<div class="alert alert-warning fade in" ><button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button><strong>';
+	if($("input[name='email']").val() == ''){
+		warn += 'Email can\'t be null !</strong> Please try again!</div>';
+		$(".col-md-4").append(warn);
+		setTimeout("$('.alert').alert('close');",1500);
+		event.preventDefault();
+	} else {
+		if($("input[name='password']").val() == ''){
+			warn +='Password can\'t be null !</strong> Please try again!</div>';
+			$(".col-md-4").append(warn);
+			setTimeout("$('.alert').alert('close');",1500);
+			event.preventDefault();
+		}
+	}
+});
