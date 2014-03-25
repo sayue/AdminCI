@@ -21,12 +21,13 @@ class Login extends CI_Controller
 		$result = $this->admin_model->valid_admin($email,$pwd);	
 		if($result == TRUE)
 		{
-			redirect('home');
+			
 			$data = array(
 				'email' => $email,
 				'is_logged_in' => TRUE
 			);
 			$this->session->set_userdata($data);
+			redirect('home');
 		}
 		else
 		{
