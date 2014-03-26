@@ -1,0 +1,12 @@
+{
+    "name": "sayue/admin-ci",
+    "authors": [
+        {
+            "name": "sayue",
+            "email": "likehuyi92@gmail.com"
+        }
+    ],
+    "require": {
+        "fabpot/PHP-CS-Fixer": "dev-master"
+    }
+}

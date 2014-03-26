@@ -305,7 +305,3 @@ table.dataTable thead .sorting:after {
 .show-grid {
     margin: 15px 0;
 }
-
-.check {
-    background: url(../images/check.png) no-repeat;
-}

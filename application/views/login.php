@@ -14,7 +14,8 @@
 
     <!-- SB Admin CSS - Include with every page -->
     <link href="<?php echo base_url('css/sb-admin.css'); ?>" rel="stylesheet">
-
+    <style type="text/css">
+    </style>
 </head>
 
 <body>
