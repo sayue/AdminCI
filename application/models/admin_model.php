@@ -12,6 +12,12 @@ class Admin_model extends CI_Model
 		$query = $this->db->get_where('admin',array('administrator' => $email,'password' => md5($password)));
 		return ($query->num_rows() == 1) ? TRUE : FALSE;
 	}
+
+	public function exist_admin($email)
+	{
+		$query = $this->db->get_where('admin',array('administrator' => $email));
+		return ($query->num_rows() == 1) ? TRUE : FALSE;
+	}
 }
 
 

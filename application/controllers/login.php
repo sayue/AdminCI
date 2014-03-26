@@ -31,7 +31,22 @@ class Login extends CI_Controller
 		}
 		else
 		{
-			redirect('login');
+			//redirect('login');
+			echo site_url('login');
+		}
+	}
+
+	public function exist()
+	{			
+		$email = $this->input->post('email_name');
+		
+		if($this->admin_model->exist_admin($email) == TRUE)
+		{
+			echo "exist";
+		}
+		else
+		{
+			echo "not exist";
 		}
 	}
 
