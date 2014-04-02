@@ -6,7 +6,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Start Bootstrap - SB Admin Version 2.0 Demo</title>
+    <title>AdminCI Management System</title>
 
     <!-- Core CSS - Include with every page -->
     <link href="<?php echo base_url('css/bootstrap.css'); ?>" rel="stylesheet">
@@ -39,7 +39,7 @@
                                 </div>
                                 <div class="checkbox">
                                     <label>
-                                        <input name="remember" type="checkbox" value="Remember Me">Remember Me
+                                        <input name="remember" type="checkbox" value="rememberme">Remember Me
                                     </label>
                                 </div>
                                 <div>

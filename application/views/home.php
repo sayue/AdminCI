@@ -6,7 +6,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Start Bootstrap - SB Admin Version 2.0 Demo</title>
+    <title>AdminCI Management System</title>
 
     <!-- Core CSS - Include with every page -->
     <link href="<?php echo base_url('css/bootstrap.css'); ?>" rel="stylesheet">
@@ -31,7 +31,7 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="index.html">SB Admin v2.0</a>
+                <a class="navbar-brand" href="<?php echo site_url('home'); ?>">SB Admin v2.0</a>
             </div>
             <!-- /.navbar-header -->
 
