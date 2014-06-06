@@ -99,13 +99,13 @@
                         <a href="#"><i class="fa fa-table fa-fw"></i> 学术资源<span class="fa arrow"></span></a>
                         <ul class="nav nav-second-level">
                             <li>
-                                <a href="flot.html">文献收藏</a>
+                                <a href="<?php echo site_url('resource'); ?>">文献收藏</a>
                             </li>
                             <li>
-                                <a href="morris.html">出版品</a>
+                                <a href="<?php echo site_url('resource/lists'); ?>">出版品</a>
                             </li>
                             <li>
-                                <a href="morris.html">添加(杂志或书籍)</a>
+                                <a href="<?php echo site_url('resource/add'); ?>">添加(杂志或书籍)</a>
                             </li>
                         </ul>
                     </li>
@@ -173,35 +173,9 @@
 
     <!-- SB Admin Scripts - Include with every page -->
     <script src="<?php echo base_url('js/sb-admin.js'); ?>"></script>
-    <script>
-
-        $(document).ready(function(){
-            
-           $("input[name='optionsRadiosInline']").change(function(event){
-                //alert($(this).val());
-                //var flag = true;
-                var i = 0;
-                $(".form-group").each(function(){
-                    i++;
-                });
-                
-                var option = $(this).val();
-                if(option == 'option3' && i == 2){
-                    
-                    var div = "<div class=\"form-group\"><label>Description</label><textarea class=\"form-control\" rows=\"3\"></textarea></div>";
-                    $("button[name='addcomfirm']").before(div);
-                    flag = false;
-                    
-                }else if((option == 'option1' || option == 'option2') && i == 3){
-                    $(".form-group:last").remove();
-                }
-
-           });
-          
-        });
-
-    </script>
-    
+    <?php if(isset($jsfile)):?>
+    <script src="<?php echo base_url($jsfile); ?>"></script>
+    <?php endif;?>
     <!-- siderbar-collapse bugs -->
 
 </body>

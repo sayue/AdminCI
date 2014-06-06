@@ -12,7 +12,8 @@ class News extends CI_Controller
     }
 
     public function add(){
-    	$this->load->view('home');
+    	$data['jsfile'] = 'js/news/addlist.js';
+    	$this->load->view('home',$data);
     	$this->load->view('news/addnews');
     }
 }
