@@ -1,15 +1,20 @@
 <?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 
-class Home extends CI_Controller
+class News extends CI_Controller
 {
     public function index()
     {
         $this->load->view('home');
-        $this->load->view('intro');
+        $this->load->view('news/newslist');
         //$this->session->sess_destroy();
         //print_r($this->session->all_userdata());
         //echo $this->session->userdata('email');
     }
+
+    public function add(){
+    	$this->load->view('home');
+    	$this->load->view('news/addnews');
+    }
 }
 
-/* End of file login.php */
+/* End of file news.php */

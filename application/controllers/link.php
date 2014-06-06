@@ -1,6 +1,6 @@
 <?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 
-class Home extends CI_Controller
+class Link extends CI_Controller
 {
     public function index()
     {
@@ -12,4 +12,4 @@ class Home extends CI_Controller
     }
 }
 
-/* End of file login.php */
+/* End of file link.php */
