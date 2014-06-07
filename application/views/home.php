@@ -22,6 +22,11 @@
         margin-left: 950px;
         margin-top: 8px;
     }
+    .btn-primary.btn-outline{
+        margin-top: 8px;
+        margin-right: 13px;
+        width:80px;
+    }
 
     </style>
 </head>
@@ -43,25 +48,10 @@
             <!-- /.navbar-header -->
 
             <ul class="nav navbar-top-links navbar-right">
-                
-                <li class="dropdown">
-                    <a class="dropdown-toggle" data-toggle="dropdown" href="#">
-                        <i class="fa fa-user fa-fw"></i>  <i class="fa fa-caret-down"></i>
-                    </a>
-                    <ul class="dropdown-menu dropdown-user">
-                        <li><a href="#"><i class="fa fa-user fa-fw"></i> User Profile</a>
-                        </li>
-                        <li><a href="#"><i class="fa fa-gear fa-fw"></i> Settings</a>
-                        </li>
-                        <li class="divider"></li>
-                        <li><a href="<?php echo site_url('login/logout'); ?>"><i class="fa fa-sign-out fa-fw"></i>退出</a>
-                        </li>
-                    </ul>
-                    <!-- /.dropdown-user -->
+                <li>
+                    <a href="<?php echo site_url('login/logout'); ?>">退出</a>
                 </li>
-                <!-- /.dropdown -->
-            </ul>
-            <!-- /.navbar-top-links -->
+                
 
         </nav>
         <!-- /.navbar-static-top -->
@@ -110,13 +100,13 @@
                         </ul>
                     </li>
                     <li>
-                        <a href="forms.html"><i class="fa fa-edit fa-fw"></i> 研究项目<span class="fa arrow"></span></a>
+                        <a href="#"><i class="fa fa-edit fa-fw"></i> 研究项目<span class="fa arrow"></span></a>
                         <ul class="nav nav-second-level">
                             <li>
-                                <a href="flot.html">项目列表</a>
+                                <a href="<?php echo site_url('project'); ?>">项目列表</a>
                             </li>
                             <li>
-                                <a href="morris.html">添加项目</a>
+                                <a href="<?php echo site_url('project/add'); ?>">添加项目</a>
                             </li>
                         </ul>
                     </li>
@@ -124,10 +114,10 @@
                         <a href="#"><i class="fa fa-wrench fa-fw"></i> 人才培养<span class="fa arrow"></span></a>
                         <ul class="nav nav-second-level">
                             <li>
-                                <a href="panels-wells.html">成员列表</a>
+                                <a href="<?php echo site_url('member'); ?>">成员列表</a>
                             </li>
                             <li>
-                                <a href="buttons.html">增加成员</a>
+                                <a href="<?php echo site_url('member/add'); ?>">增加成员</a>
                             </li>
                         </ul>
                         <!-- /.nav-second-level -->
@@ -136,10 +126,10 @@
                         <a href="#"><i class="fa fa-sitemap fa-fw"></i> 友情链接<span class="fa arrow"></span></a>
                         <ul class="nav nav-second-level">
                             <li>
-                                <a href="#">链接列表</a>
+                                <a href="<?php echo site_url('link'); ?>">链接列表</a>
                             </li>
                             <li>
-                                <a href="#">添加链接</a>
+                                <a href="<?php echo site_url('link/add'); ?>">添加链接</a>
                             </li>
                         </ul>
                         <!-- /.nav-second-level -->
@@ -148,10 +138,10 @@
                         <a href="#"><i class="fa fa-files-o fa-fw"></i> 管理员设置<span class="fa arrow"></span></a>
                         <ul class="nav nav-second-level">
                             <li>
-                                <a href="blank.html">密码管理</a>
+                                <a href="<?php echo site_url('admin'); ?>">密码管理</a>
                             </li>
                             <li>
-                                <a href="login.html">添加管理员</a>
+                                <a href="<?php echo site_url('admin/add'); ?>">添加管理员</a>
                             </li>
                         </ul>
                         <!-- /.nav-second-level -->

@@ -15,6 +15,10 @@
     <!-- SB Admin CSS - Include with every page -->
     <link href="<?php echo base_url('css/sb-admin.css'); ?>" rel="stylesheet">
     <style type="text/css">
+    .panel-title{
+        font-size: 22px;
+        margin-left: 13px;
+    }
     </style>
 </head>
 
@@ -22,10 +26,12 @@
 
     <div class="container">
         <div class="row">
+            
             <div class="col-md-4 col-md-offset-4">
+
                 <div class="login-panel panel panel-default">
                     <div class="panel-heading">
-                        <h3 class="panel-title">Please Sign In</h3>
+                        <h3 class="panel-title">移民与族群研究中心--后台管理</h3>
                     </div>
                     <div class="panel-body">
                         <form role="form" action="<?php echo site_url('login/validate'); ?>" method="post">
@@ -37,13 +43,13 @@
                                 <div class="form-group">
                                     <input class="form-control" placeholder="Password" name="password" type="password" value="">
                                 </div>
-                                <div class="checkbox">
+                                <div class="checkbox" >
                                     <label>
                                         <input name="remember" type="checkbox" value="rememberme">Remember Me
                                     </label>
                                 </div>
                                 <div>
-                                    <button type="submit" class="btn btn-lg btn-success btn-block">Login</button>
+                                    <button type="submit" class="btn btn-lg btn-success btn-block">登陆</button>
                                 </div>
                                 <!-- Change this to a button or input when using this as a form -->
                                 

@@ -17,9 +17,9 @@ class Resource extends CI_Controller
     }
 
     public function add(){
-    	$data['jsfile'] = 'js/resource/add.js';
+    	$data['jsfile'] = 'js/resource/add_publication.js';
     	$this->load->view('home',$data);
-        $this->load->view('resource/add');
+        $this->load->view('resource/add_publication');
     }
 
 }

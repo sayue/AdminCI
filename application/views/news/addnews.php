@@ -10,7 +10,7 @@
               <div class="col-lg-12">
                     <h1 class="page-header">学术动态</h1>
                     <div class="form-group">
-                                            <label>Kinds of news selection</label>
+                                            <label>动态类型</label>
                                             <label class="radio-inline">
                                                 <input type="radio" name="optionsRadiosInline" id="optionsRadiosInline1" value="option1" checked="">学术会议
                                             </label>
