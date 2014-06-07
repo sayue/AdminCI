@@ -27,14 +27,14 @@ $("input[name='email']").change(function(event){
 			if(msg.toString() == 'exist'){
 				$("input[name='password']").removeAttr("disabled");
 				$('.glyphicon').remove();
-				$('.panel-body .form-group').append("<span class=\"glyphicon glyphicon-ok-sign\" style=\"position:absolute; top:155px; left:330px;\" ></span>");
+				$('.panel-body .form-group').append("<span class=\"glyphicon glyphicon-ok-sign\" style=\"position:fixed; margin-top:161px; margin-left:304px;\" ></span>");
 				
 			}
 			else if(msg.toString() == 'not exist'){
 				$("input[name='password']").removeAttr("disabled");
 				$('.glyphicon').remove();
 				$("input[name='password']").attr("disabled","disabled");
-				$('.panel-body .form-group').append("<span class=\"glyphicon glyphicon-remove-sign\" style=\"position:absolute; top:155px; left:330px;\" ></span>");
+				$('.panel-body .form-group').append("<span class=\"glyphicon glyphicon-remove-sign\" style=\"position:fixed; margin-top:161px; margin-left:304px;\" ></span>");
 				
 			}
 				

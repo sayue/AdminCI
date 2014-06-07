@@ -5,8 +5,8 @@ class login extends CI_Controller
     public function index()
     {
 		if(!$this->is_logged_in()) {
-			$this->validToken();	
-            //$this->load->view('login');
+			//$this->validToken();	
+            $this->load->view('login');
 		} else {
             redirect('home');
         }
@@ -25,11 +25,12 @@ class login extends CI_Controller
                 'is_logged_in' => TRUE
             );
             $this->session->set_userdata($data);
-				
+			
+            /* remember me	
 			if($remember == 'rememberme'){
 				//create autologin token
 				$this->createToken();
-			}
+			}*/
 
             redirect('home');
         } else {

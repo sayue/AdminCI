@@ -4,14 +4,17 @@ class Resource extends CI_Controller
 {
     public function index()
     {
-        $this->load->view('home');
+        $data['num'] = $this->show_model->showdoccount();
+        $this->load->view('home',$data);
         $this->load->view('resource/doc_count');
         
     }
 
     public function lists()
     {
-        $this->load->view('home');
+        $data['magazine'] = $this->show_model->showmagabook('magazine');
+        $data['book'] = $this->show_model->showmagabook('book');
+        $this->load->view('home',$data);
         $this->load->view('resource/publication');
         
     }

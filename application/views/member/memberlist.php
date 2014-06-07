@@ -34,54 +34,26 @@
                         </tr>
                       </thead>
                       <tbody>
+
+                        <?php if(isset($member)): $i = 1;?>
+                        <?php foreach($member as $item):?>
                         <tr>
-                          <td>1</td>
-                          <td>周大鸣</td>
-                          <td>1958.12</td>
-                          <td>教授</td>
-                          <td>博士</td>
-                          <td>都市人类学</td>
+                          <td><?php echo $i++;?></td>
+                          <td><?php echo $item['name'];?></td>
+                          <td><?php echo $item['birth'];?></td>
+                          <td><?php echo $item['position'];?></td>
+                          <td><?php echo $item['degree'];?></td>
+                          <td><?php echo $item['field'];?></td>
                           <td>
-                              <button type="button" class="btn btn-primary btn-xs" data-toggle="modal" data-target="#myModalMember">Edit</button>
-                              <button type="button" class="btn btn-danger btn-xs">Delete</button>
+                              <button type="button" class="btn btn-primary btn-xs" data-toggle="modal" data-target="#myModalMember">修改</button>
+                              <button type="button" class="btn btn-danger btn-xs">删除</button>
                           </td>
                         </tr>
-                        <tr>
-                          <td>2</td>
-                          <td>陈志明</td>
-                          <td>1950.4</td>
-                          <td>教授</td>
-                          <td>博士</td>
-                          <td>海外华人、全球化</td>
-                          <td>
-                              <button type="button" class="btn btn-primary btn-xs" data-toggle="modal" data-target="#myModalMember">Edit</button>
-                              <button type="button" class="btn btn-danger btn-xs">Delete</button>
-                          </td>
-                        </tr>
-                        <tr>
-                          <td>3</td>
-                          <td>刘志扬</td>
-                          <td>1965.9</td>
-                          <td>教授</td>
-                          <td>博士</td>
-                          <td>族群研究、藏族社会研究</td>
-                          <td>
-                              <button type="button" class="btn btn-primary btn-xs" data-toggle="modal" data-target="#myModalMember">Edit</button>
-                              <button type="button" class="btn btn-danger btn-xs">Delete</button>
-                          </td>
-                        </tr>
-                          <tr>
-                          <td>4</td>
-                          <td>朱健刚</td>
-                          <td>1972.11</td>
-                          <td>教授</td>
-                          <td>博士</td>
-                          <td>移民研究、公益慈善研究</td>
-                          <td>
-                              <button type="button" class="btn btn-primary btn-xs" data-toggle="modal" data-target="#myModalMember">Edit</button>
-                              <button type="button" class="btn btn-danger btn-xs">Delete</button>
-                          </td>
-                        </tr>
+                        <?php endforeach;?>
+                        <?php endif;?>
+
+
+                        
                       </tbody>
                     </table>
                   </div>

@@ -11,14 +11,14 @@ class Admin_model extends CI_Model
 	{
 		$email = $this->security->xss_clean($email);
 		$password = $this->security->xss_clean($password);
-		$query = $this->db->get_where('admin',array('administrator' => $email,'password' => md5($password)));
+		$query = $this->db->get_where('admin',array('username' => $email,'password' => md5($password)));
 		return ($query->num_rows() == 1) ? TRUE : FALSE;
 	}
 
 	public function exist_admin($email)
 	{
 		$email = $this->security->xss_clean($email);
-		$query = $this->db->get_where('admin',array('administrator' => $email));
+		$query = $this->db->get_where('admin',array('username' => $email));
 		return ($query->num_rows() == 1) ? TRUE : FALSE;
 	}
 
@@ -33,7 +33,7 @@ class Admin_model extends CI_Model
 			}
 		}else{
 			//init the token
-			$queryCheck = $this->db->get_where('admin',array('administrator' => $email));
+			$queryCheck = $this->db->get_where('admin',array('username' => $email));
 			$row = $queryCheck->row();
 			$admin_id = $row->id;
 			$this->db->insert('user_token',array(

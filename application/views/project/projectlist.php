@@ -25,35 +25,26 @@
                     <thead>
                     <tr>
                       <th>#</th>
-                      <th>title</th>
-                      <th>handle</th>
+                      <th>项目简述</th>
+                      <th>操作</th>
                     </tr>
                     </thead>
                     <tbody>
+
+                    <?php if(isset($academic)): $i = 1;?>
+                    <?php foreach($academic as $item):?>
                     <tr>
-                      <td>1</td>
-                      <td>“华南的移民与城市化——以珠三角地区为例”，教育部人文社会科学重点...</td>
+                      <td><?php echo $i++;?></td>
+                      <td><?php if(strlen($item['title']) > 170){echo mb_substr($item['title'],0,65,'utf8').'...';}else{echo $item['title'];}?></td>
                       <td>
                           <button type="button" class="btn btn-primary btn-xs" data-toggle="modal" data-target="#myModalAcademic">Edit</button>
                           <button type="button" class="btn btn-danger btn-xs">Delete</button>
                       </td>
                     </tr>
-                    <tr>
-                      <td>2</td>
-                      <td>“中国乡村都市化再研究——珠江三角洲的透视”，国家社科基金后期...</td>
-                      <td>
-                          <button type="button" class="btn btn-primary btn-xs" data-toggle="modal" data-target="#myModalAcademic">Edit</button>
-                          <button type="button" class="btn btn-danger btn-xs">Delete</button>
-                      </td>
-                    </tr>
-                    <tr>
-                      <td>3</td>
-                      <td>“国际移民适应性研究：以广州社区为例”，广东省文科重点研究基...</td>
-                      <td>
-                          <button type="button" class="btn btn-primary btn-xs" data-toggle="modal" data-target="#myModalAcademic">Edit</button>
-                          <button type="button" class="btn btn-danger btn-xs">Delete</button>
-                      </td>
-                    </tr>
+                    <?php endforeach;?>
+                    <?php endif;?>
+                    
+                    
                     </tbody>
                     </table>
                   </div>
@@ -69,35 +60,26 @@
                     <thead>
                     <tr>
                       <th>#</th>
-                      <th>title</th>
-                      <th>handle</th>
+                      <th>项目简述</th>
+                      <th>操作</th>
                     </tr>
                     </thead>
                     <tbody>
+                    
+                    <?php if(isset($practical)): $j = 1;?>
+                    <?php foreach($practical as $item):?>
                     <tr>
-                      <td>1</td>
-                      <td>“世行贷款安徽黄山新农村建设示范项目移民安置行动计划报告编制...</td>
+                      <td><?php echo $j++;?></td>
+                      <td><?php if(strlen($item['title']) > 170){echo mb_substr($item['title'],0,65,'utf8').'...';}else{echo $item['title'];}?></td>
                       <td>
-                          <button type="button" class="btn btn-primary btn-xs" data-toggle="modal" data-target="#myModalPractical">Edit</button>
+                          <button type="button" class="btn btn-primary btn-xs" data-toggle="modal" data-target="#myModalAcademic">Edit</button>
                           <button type="button" class="btn btn-danger btn-xs">Delete</button>
                       </td>
                     </tr>
-                    <tr>
-                      <td>2</td>
-                      <td>世界银行“云南城市环境建设项目(II) (云南省昭通市)” 社会评价与...</td>
-                      <td>
-                          <button type="button" class="btn btn-primary btn-xs" data-toggle="modal" data-target="#myModalPractical">Edit</button>
-                          <button type="button" class="btn btn-danger btn-xs">Delete</button>
-                      </td>
-                    </tr>
-                    <tr>
-                      <td>3</td>
-                      <td>2003年10月-2004年10月，中国贫困农村社区发展（西南扶贫4）<div class=""></div></td>
-                      <td>
-                          <button type="button" class="btn btn-primary btn-xs" data-toggle="modal" data-target="#myModalPractical">Edit</button>
-                          <button type="button" class="btn btn-danger btn-xs">Delete</button>
-                      </td>
-                    </tr>
+                    <?php endforeach;?>
+                    <?php endif;?>
+
+                    
                     </tbody>
                     </table>
                   </div>

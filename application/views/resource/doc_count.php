@@ -25,6 +25,8 @@
             <th colspan="2">报刊拥有量（种）</th>
           </tr>
         </thead>
+        <?php if(isset($num)):?>
+        <?php foreach($num as $item):?>  
         <tbody>
           <tr>
             <td>单位</td>
@@ -34,20 +36,24 @@
             <td>外文报刊</td>
           </tr>
           <tr>
-          	<td>学校图书馆</td>	
-            <td><input class="form-control" value="400万"></td>
-            <td><input class="form-control" value="80万"></td>
-            <td><input class="form-control" value="58.88万册"></td>
-            <td><input class="form-control" value="外文纸本期刊34.76万册"></td>
+          	<td>学校图书馆</td>
+
+            <td><input class="form-control" value="<?php echo $item['lib_zh_book'];?>"></td>
+            <td><input class="form-control" value="<?php echo $item['lib_en_book'];?>"></td>
+            <td><input class="form-control" value="<?php echo $item['lib_zh_mag'];?>"></td>
+            <td><input class="form-control" value="<?php echo $item['lib_en_mag'];?>"></td>
           </tr>
           <tr>
             <td>申报机构资料室</td>
-            <td><input class="form-control" value="1万"></td>
-            <td><input class="form-control" value="2千"></td>
-            <td><input class="form-control" value="20份"></td>
-            <td><input class="form-control" value="5份"></td>
+            <td><input class="form-control" value="<?php echo $item['doc_zh_book'];?>"></td>
+            <td><input class="form-control" value="<?php echo $item['doc_en_book'];?>"></td>
+            <td><input class="form-control" value="<?php echo $item['doc_zh_mag'];?>"></td>
+            <td><input class="form-control" value="<?php echo $item['doc_en_mag'];?>"></td>
           </tr>
         </tbody>
+
+        <?php endforeach;?>
+        <?php endif;?>
       </table>
 					<button type="button" class="btn btn-outline btn-primary">确认修改</button>
 				  </div>

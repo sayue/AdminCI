@@ -4,7 +4,9 @@ class Project extends CI_Controller
 {
     public function index()
     {
-        $this->load->view('home');
+        $data['academic'] = $this->show_model->showproject('academic');
+        $data['practical'] = $this->show_model->showproject('practical');
+        $this->load->view('home',$data);
         $this->load->view('project/projectlist');
         //$this->session->sess_destroy();
         //print_r($this->session->all_userdata());

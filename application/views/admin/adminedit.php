@@ -27,7 +27,7 @@
                       <div class="form-group">
                           <label class="col-sm-2 control-label">用户名</label>
                           <div class="col-sm-10">
-                              <p class="form-control-static">email@example.com</p>
+                              <p class="form-control-static"><?php echo $this->session->userdata('email');?></p>
                           </div>
                       </div>
                       <div class="form-group">

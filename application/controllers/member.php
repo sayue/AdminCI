@@ -4,7 +4,8 @@ class Member extends CI_Controller
 {
     public function index()
     {
-        $this->load->view('home');
+        $data['member'] = $this->show_model->showmember();
+        $this->load->view('home',$data);
         $this->load->view('member/memberlist');
         //$this->session->sess_destroy();
         //print_r($this->session->all_userdata());

@@ -4,7 +4,11 @@ class Link extends CI_Controller
 {
     public function index()
     {
-        $this->load->view('home');
+        $data['school'] = $this->show_model->showlink('school');
+        $data['country'] = $this->show_model->showlink('country');
+        $data['science'] = $this->show_model->showlink('science');
+        $data['academic'] = $this->show_model->showlink('academic');
+        $this->load->view('home',$data);
         $this->load->view('link/linklist');
         //$this->session->sess_destroy();
         //print_r($this->session->all_userdata());

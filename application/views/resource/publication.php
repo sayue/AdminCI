@@ -30,30 +30,21 @@
                     </tr>
                     </thead>
                     <tbody>
+
+                    <?php if(isset($magazine)): $i = 1;?>
+                    <?php foreach($magazine as $item):?>
                     <tr>
-                      <td>1</td>
-                      <td>《中国比较研究》（The Journal of China in Comparative Perspective）</td>
+                      <td><?php echo $i++;?></td>
+                      <td><?php echo $item['title'];?></td>
                       <td>
                           <button type="button" class="btn btn-primary btn-xs" data-toggle="modal" data-target="#myModalMagazine">Edit</button>
                           <button type="button" class="btn btn-danger btn-xs">Delete</button>
                       </td>
                     </tr>
-                    <tr>
-                      <td>2</td>
-                      <td>《工商人类学》The International Journal of Business Anthropology(IJBA)</td>
-                      <td>
-                          <button type="button" class="btn btn-primary btn-xs" data-toggle="modal" data-target="#myModalMagazine">Edit</button>
-                          <button type="button" class="btn btn-danger btn-xs">Delete</button>
-                      </td>
-                    </tr>
-                    <tr>
-                      <td>3</td>
-                      <td>《中国社会学与人类学》Chinese Sociology and Anthropology</td>
-                      <td>
-                          <button type="button" class="btn btn-primary btn-xs" data-toggle="modal" data-target="#myModalMagazine">Edit</button>
-                          <button type="button" class="btn btn-danger btn-xs">Delete</button>
-                      </td>
-                    </tr>
+                    <?php endforeach;?>
+                    <?php endif;?>
+                    
+                    
                     </tbody>
                     </table>
                   </div>
@@ -74,30 +65,21 @@
                     </tr>
                     </thead>
                     <tbody>
+
+                    <?php if(isset($book)): $j = 1;?>
+                    <?php foreach($book as $item):?>
                     <tr>
-                      <td>1</td>
-                      <td>《农民工的流动与转型：以湖南攸县为例》</td>
+                      <td><?php echo $j++;?></td>
+                      <td><?php echo $item['title'];?></td>
                       <td>
                           <button type="button" class="btn btn-primary btn-xs" data-toggle="modal" data-target="#myModalBook">Edit</button>
                           <button type="button" class="btn btn-danger btn-xs">Delete</button>
                       </td>
                     </tr>
-                    <tr>
-                      <td>2</td>
-                      <td>《泰国北部的云南人：族群形成、文化适应与历史变迁》</td>
-                      <td>
-                          <button type="button" class="btn btn-primary btn-xs" data-toggle="modal" data-target="#myModalBook">Edit</button>
-                          <button type="button" class="btn btn-danger btn-xs">Delete</button>
-                      </td>
-                    </tr>
-                    <tr>
-                      <td>3</td>
-                      <td>《都市中国社会学新探》</td>
-                      <td>
-                          <button type="button" class="btn btn-primary btn-xs" data-toggle="modal" data-target="#myModalBook">Edit</button>
-                          <button type="button" class="btn btn-danger btn-xs">Delete</button>
-                      </td>
-                    </tr>
+                    <?php endforeach;?>
+                    <?php endif;?>
+                    
+                    
                     </tbody>
                     </table>
                   </div>

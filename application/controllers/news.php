@@ -4,7 +4,10 @@ class News extends CI_Controller
 {
     public function index()
     {
-        $this->load->view('home');
+        $data['meeting'] = $this->show_model->shownews('meeting');
+        $data['visit'] = $this->show_model->shownews('visit');
+        $data['prize'] = $this->show_model->shownews('prize');
+        $this->load->view('home',$data);
         $this->load->view('news/newslist');
         //$this->session->sess_destroy();
         //print_r($this->session->all_userdata());
