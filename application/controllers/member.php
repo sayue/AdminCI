@@ -5,6 +5,7 @@ class Member extends CI_Controller
     public function index()
     {
         $data['member'] = $this->show_model->showmember();
+        $data['jsfile'] = 'js/member/memberlist.js';
         $this->load->view('home',$data);
         $this->load->view('member/memberlist');
         //$this->session->sess_destroy();
@@ -15,6 +16,13 @@ class Member extends CI_Controller
     public function add(){
     	$this->load->view('home');
     	$this->load->view('member/addmember');
+    }
+
+    public function showmember($id){
+        $result = $this->show_model->showmemberbyid($id);
+        $result = implode("%",$result);
+        //$result = 'hello';
+        echo $result;
     }
 }
 

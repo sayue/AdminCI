@@ -4,7 +4,9 @@ class Home extends CI_Controller
 {
     public function index()
     {
-        $this->load->view('home');
+    	$data['intro'] = $this->show_model->showintro();
+    	$data['id'] = ['One','Two','Three','Four','Five','Six'];
+        $this->load->view('home',$data);
         $this->load->view('intro');
         //$this->session->sess_destroy();
         //print_r($this->session->all_userdata());

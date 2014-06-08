@@ -6,6 +6,7 @@ class Project extends CI_Controller
     {
         $data['academic'] = $this->show_model->showproject('academic');
         $data['practical'] = $this->show_model->showproject('practical');
+        $data['jsfile'] = 'js/project/projectlist.js';
         $this->load->view('home',$data);
         $this->load->view('project/projectlist');
         //$this->session->sess_destroy();
@@ -16,6 +17,13 @@ class Project extends CI_Controller
     public function add(){
     	$this->load->view('home');
     	$this->load->view('project/addproject');
+    }
+
+    public function showproject($id){
+        $result = $this->show_model->showprojectbyid($id);
+        $result = implode("%",$result);
+        //$result = 'hello';
+        echo $result;
     }
 }
 

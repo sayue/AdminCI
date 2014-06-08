@@ -25,8 +25,8 @@
                     <thead>
                     <tr>
                       <th>#</th>
-                      <th>title</th>
-                      <th>handle</th>
+                      <th>杂志名</th>
+                      <th>操作</th>
                     </tr>
                     </thead>
                     <tbody>
@@ -37,8 +37,8 @@
                       <td><?php echo $i++;?></td>
                       <td><?php echo $item['title'];?></td>
                       <td>
-                          <button type="button" class="btn btn-primary btn-xs" data-toggle="modal" data-target="#myModalMagazine">Edit</button>
-                          <button type="button" class="btn btn-danger btn-xs">Delete</button>
+                          <a href="#" class="edit-magazine" data-toggle="modal" data-target="#myModalMagazine" value="<?php echo $item['id'];?>">修改</a>
+                          <a href="#" data-toggle="modal" data-target="#myModal">删除</a>
                       </td>
                     </tr>
                     <?php endforeach;?>
@@ -60,8 +60,8 @@
                     <thead>
                     <tr>
                       <th>#</th>
-                      <th>title</th>
-                      <th>handle</th>
+                      <th>书名</th>
+                      <th>操作</th>
                     </tr>
                     </thead>
                     <tbody>
@@ -72,8 +72,8 @@
                       <td><?php echo $j++;?></td>
                       <td><?php echo $item['title'];?></td>
                       <td>
-                          <button type="button" class="btn btn-primary btn-xs" data-toggle="modal" data-target="#myModalBook">Edit</button>
-                          <button type="button" class="btn btn-danger btn-xs">Delete</button>
+                          <a href="#" class="edit-book" data-toggle="modal" data-target="#myModalBook" value="<?php echo $item['id'];?>">修改</a>
+                          <a href="#" data-toggle="modal" data-target="#myModal">删除</a>
                       </td>
                     </tr>
                     <?php endforeach;?>
@@ -91,16 +91,16 @@
                         <div class="modal-content">
                         <div class="modal-header">
                             <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-                            <h4 class="modal-title" id="myModalLabel">Magazine</h4>
+                            <h4 class="modal-title" id="myModalLabel">杂志</h4>
                         </div>
 
                         <div class="modal-body">
                             <div class="form-group">
                             <label>杂志名</label>
-                                <input class="form-control"> 
+                                <input class="form-control edit-maga-title"> 
                             </div>
                             <label>杂志简介</label>
-                            <textarea class="form-control" rows="3"></textarea>
+                            <textarea class="form-control edit-maga-desc" rows="10"></textarea>
                         </div>
                         <div class="modal-footer">
                             <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
@@ -117,29 +117,29 @@
                         <div class="modal-content">
                         <div class="modal-header">
                             <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-                            <h4 class="modal-title" id="myModalLabel">Book</h4>
+                            <h4 class="modal-title" id="myModalLabel">书籍</h4>
                         </div>
                         <div class="modal-body">
 
                             <div class="form-group book-edit">
                                 <label>书名</label>
-                                <input class="form-control"> 
+                                <input class="form-control edit-book-title"> 
                             </div>
                             <div class="form-group book-edit">
                                 <label>作者</label>
-                                <input class="form-control"> 
+                                <input class="form-control edit-book-author"> 
                             </div>
                             <div class="form-group book-edit">
                                 <label>出版社</label>
-                                <input class="form-control"> 
+                                <input class="form-control edit-book-publisher"> 
                             </div>
                             <div class="form-group book-edit">
                                 <label>出版日期</label>
-                                <input class="form-control"> 
+                                <input class="form-control edit-book-date"> 
                             </div>
                             <div class="form-group">
                             <label>书本简介</label>
-                            <textarea class="form-control" rows="3"></textarea>
+                            <textarea class="form-control edit-book-desc" rows="10"></textarea>
                             </div>
                             <div class="form-group">
                                 <label>书本图片上传</label>

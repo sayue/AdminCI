@@ -14,6 +14,7 @@ class Resource extends CI_Controller
     {
         $data['magazine'] = $this->show_model->showmagabook('magazine');
         $data['book'] = $this->show_model->showmagabook('book');
+        $data['jsfile'] = 'js/resource/publication.js';
         $this->load->view('home',$data);
         $this->load->view('resource/publication');
         
@@ -23,6 +24,13 @@ class Resource extends CI_Controller
     	$data['jsfile'] = 'js/resource/add_publication.js';
     	$this->load->view('home',$data);
         $this->load->view('resource/add_publication');
+    }
+
+    public function showpubbyid($id){
+        $result = $this->show_model->showpubbyid($id);
+        $result = implode("%",$result);
+        //$result = 'hello';
+        echo $result;
     }
 
 }

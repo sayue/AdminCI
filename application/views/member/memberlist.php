@@ -45,8 +45,8 @@
                           <td><?php echo $item['degree'];?></td>
                           <td><?php echo $item['field'];?></td>
                           <td>
-                              <button type="button" class="btn btn-primary btn-xs" data-toggle="modal" data-target="#myModalMember">修改</button>
-                              <button type="button" class="btn btn-danger btn-xs">删除</button>
+                              <a href="#" class="edit-member" data-toggle="modal" data-target="#myModalMember" value="<?php echo $item['id'];?>">修改</a>
+                              <a href="#" data-toggle="modal" data-target="#myModal">删除</a>
                           </td>
                         </tr>
                         <?php endforeach;?>
@@ -72,31 +72,31 @@
 
                             <div class="form-group member-edit">
                                 <label>姓名</label>
-                                <input class="form-control" value="周大鸣"> 
+                                <input class="form-control edit-mem-name" value=""> 
                             </div>
                             <div class="form-group member-edit">
                                 <label>职称</label>
-                                <input class="form-control" value="教授"> 
+                                <input class="form-control edit-mem-position" value=""> 
                             </div>
                             <div class="form-group member-edit">
                                 <label>学位</label>
-                                <input class="form-control" value="博士"> 
+                                <input class="form-control edit-mem-degree" value=""> 
                             </div>
                             <div class="form-group member-edit">
                                 <label>研究领域</label>
-                                <input class="form-control" value="都市人类学"> 
+                                <input class="form-control edit-mem-field" value=""> 
                             </div>
                             <div class="form-group member-edit">
                                 <label>院系（选填）</label>
-                                <input class="form-control"> 
+                                <input class="form-control edit-mem-department"> 
                             </div>
                             <div class="form-group member-edit">
                                 <label>工作单位（选填）</label>
-                                <input class="form-control"> 
+                                <input class="form-control edit-mem-institution"> 
                             </div>
                             <div class="form-group">
                             <label>个人简介</label>
-                            <textarea class="form-control" rows="5">中山大学社会学人类学学院教授，博士生导师。 中山大学移民与族群研究中心主任国务院学位委员会社会学学科评议组成员，国家社会科学基金学科评审组专家，广东省高等学校珠江学者特聘教授，中国人民大学、中央民族大学兼职教授，担任SSCI期刊Chinese Sociology Anthropology杂志主编近10年，现任美国International Journal of Business Anthropology杂志主编，创建中国田野调查基金。美国哈佛大学、日本东京大学、德国柏林自由大学美国太平洋路德大学访问学者，并多次到香港、澳门、台湾及美国、加拿大、日本、荷兰、意大利等地进行讲学及学术交流活动。 主要研究方向为移民、族群与族群关系、中国乡村社会、都市人类学。</textarea>
+                            <textarea class="form-control edit-mem-intro" rows="10"></textarea>
                             </div>
                             <div class="form-group">
                                 <label>个人照片上传（可选）</label>

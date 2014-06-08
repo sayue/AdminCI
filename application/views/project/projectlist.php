@@ -37,8 +37,8 @@
                       <td><?php echo $i++;?></td>
                       <td><?php if(strlen($item['title']) > 170){echo mb_substr($item['title'],0,65,'utf8').'...';}else{echo $item['title'];}?></td>
                       <td>
-                          <button type="button" class="btn btn-primary btn-xs" data-toggle="modal" data-target="#myModalAcademic">Edit</button>
-                          <button type="button" class="btn btn-danger btn-xs">Delete</button>
+                          <a href="#" class="edit-academic" data-toggle="modal" data-target="#myModalAcademic" value="<?php echo $item['id'];?>">修改</a>
+                          <a href="#" data-toggle="modal" data-target="#myModal">删除</a>
                       </td>
                     </tr>
                     <?php endforeach;?>
@@ -72,8 +72,8 @@
                       <td><?php echo $j++;?></td>
                       <td><?php if(strlen($item['title']) > 170){echo mb_substr($item['title'],0,65,'utf8').'...';}else{echo $item['title'];}?></td>
                       <td>
-                          <button type="button" class="btn btn-primary btn-xs" data-toggle="modal" data-target="#myModalAcademic">Edit</button>
-                          <button type="button" class="btn btn-danger btn-xs">Delete</button>
+                          <a href="#" class="edit-practical" data-toggle="modal" data-target="#myModalPractical" value="<?php echo $item['id'];?>">修改</a>
+                          <a href="#" data-toggle="modal" data-target="#myModal">删除</a>
                       </td>
                     </tr>
                     <?php endforeach;?>
@@ -97,10 +97,10 @@
                         <div class="modal-body">
                             <div class="form-group">
                             <label>项目名</label>
-                                <input class="form-control"> 
+                                <input class="form-control edit-aca-title"> 
                             </div>
                             <label>项目简介（若无简介可不填）</label>
-                            <textarea class="form-control" rows="3"></textarea>
+                            <textarea class="form-control edit-aca-intro" rows="10"></textarea>
                         </div>
                         <div class="modal-footer">
                             <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
@@ -122,10 +122,10 @@
                         <div class="modal-body">
                             <div class="form-group">
                             <label>项目名</label>
-                                <input class="form-control"> 
+                                <input class="form-control edit-prac-title"> 
                             </div>
                             <label>项目简介（若无简介可不填）</label>
-                            <textarea class="form-control" rows="3"></textarea>
+                            <textarea class="form-control edit-prac-intro" rows="10"></textarea>
                         </div>
                         <div class="modal-footer">
                             <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>

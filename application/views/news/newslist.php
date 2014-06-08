@@ -31,8 +31,8 @@
                       <td><?php echo $i++;?></td>
                       <td><?php if(strlen($item['content']) > 170){echo mb_substr($item['content'],0,65,'utf8').'...';}else{echo $item['content'];}?></td>
                       <td>
-                          <button type="button" class="btn btn-primary btn-xs" data-toggle="modal" data-target="#myModal">修改</button>
-                          <button type="button" class="btn btn-danger btn-xs">删除</button>
+                          <a href="#" class="edit-news" data-toggle="modal" data-target="#myModal" value="<?php echo $item['id'];?>">修改</a>
+                          <a href="#" data-toggle="modal" data-target="#myModal">删除</a>
                       </td>
                     </tr>
                     <?php endforeach;?>
@@ -66,8 +66,8 @@
                       <td><?php echo $i++;?></td>
                       <td><?php if(strlen($item['content']) > 170){echo mb_substr($item['content'],0,65,'utf8').'...';}else{echo $item['content'];}?></td>
                       <td>
-                          <button type="button" class="btn btn-primary btn-xs" data-toggle="modal" data-target="#myModal">修改</button>
-                          <button type="button" class="btn btn-danger btn-xs">删除</button>
+                          <a href="#" class="edit-news" data-toggle="modal" data-target="#myModal" value="<?php echo $item['id'];?>">修改</a>
+                          <a href="#" data-toggle="modal" data-target="#myModal">删除</a>
                       </td>
                     </tr>
                     <?php endforeach;?>
@@ -101,8 +101,8 @@
                       <td><?php echo $i++;?></td>
                       <td><?php if(strlen($item['content']) > 170){echo mb_substr($item['content'],0,65,'utf8').'...';}else{echo $item['content'];}?></td>
                       <td>
-                          <button type="button" class="btn btn-primary btn-xs" data-toggle="modal" data-target="#myModal">修改</button>
-                          <button type="button" class="btn btn-danger btn-xs">删除</button>
+                          <a href="#" class="edit-news" data-toggle="modal" data-target="#myModal" value="<?php echo $item['id'];?>">修改</a>
+                          <a href="#" data-toggle="modal" data-target="#myModal">删除</a>
                       </td>
                     </tr>
                     <?php endforeach;?>
@@ -124,11 +124,11 @@
 
                         <div class="modal-body">
                             <div class="form-group">
-                            <label>title</label>
-                                <input class="form-control"> 
+                            <label>标题</label>
+                                <input class="form-control edit-title"> 
                             </div>
                             <label>简介(学术会议、人员出访可不选)</label>
-                            <textarea class="form-control" rows="3"></textarea>
+                            <textarea class="form-control edit-description" rows="10"></textarea>
                         </div>
                         <div class="modal-footer">
                             <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>

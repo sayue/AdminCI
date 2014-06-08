@@ -37,11 +37,11 @@
                         <form role="form" action="<?php echo site_url('login/validate'); ?>" method="post">
                             <fieldset>
                                 <div class="form-group">
-                                      <input class="form-control" placeholder="E-mail" name="email" type="email" autofocus>
+                                      <input class="form-control" placeholder="用户名" name="email" type="email" autofocus>
                                       
                                 </div>
                                 <div class="form-group">
-                                    <input class="form-control" placeholder="Password" name="password" type="password" value="">
+                                    <input class="form-control" placeholder="密码" name="password" type="password" value="">
                                 </div>
                                 <div class="checkbox" >
                                     <label>

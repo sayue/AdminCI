@@ -27,7 +27,7 @@
                       <th>#</th>
                       <th>title</th>
                       <th>url</th>
-                      <th>handle</th>
+                      <th>操作</th>
                     </tr>
                     </thead>
                     <tbody>
@@ -39,8 +39,8 @@
                       <td><?php echo $item['title'];?></td>
                       <td><?php echo $item['url'];?></td>
                       <td>
-                          <button type="button" class="btn btn-primary btn-xs" data-toggle="modal" data-target="#myModalLink">Edit</button>
-                          <button type="button" class="btn btn-danger btn-xs">Delete</button>
+                          <a href="#" class="edit-link" data-toggle="modal" data-target="#myModalLink" value="<?php echo $item['id'];?>">修改</a>
+                          <a href="#" data-toggle="modal" data-target="#myModal">删除</a>
                       </td>
                     </tr>
                     <?php endforeach;?>
@@ -64,7 +64,7 @@
                       <th>#</th>
                       <th>title</th>
                       <th>url</th>
-                      <th>handle</th>
+                      <th>操作</th>
                     </tr>
                     </thead>
                     <tbody>
@@ -76,8 +76,8 @@
                       <td><?php echo $item['title'];?></td>
                       <td><?php echo $item['url'];?></td>
                       <td>
-                          <button type="button" class="btn btn-primary btn-xs" data-toggle="modal" data-target="#myModalLink">Edit</button>
-                          <button type="button" class="btn btn-danger btn-xs">Delete</button>
+                          <a href="#" class="edit-link" data-toggle="modal" data-target="#myModalLink" value="<?php echo $item['id'];?>">修改</a>
+                          <a href="#" data-toggle="modal" data-target="#myModal">删除</a>
                       </td>
                     </tr>
                     <?php endforeach;?>
@@ -100,7 +100,7 @@
                       <th>#</th>
                       <th>title</th>
                       <th>url</th>
-                      <th>handle</th>
+                      <th>操作</th>
                     </tr>
                     </thead>
                     <tbody>
@@ -112,8 +112,8 @@
                       <td><?php echo $item['title'];?></td>
                       <td><?php echo $item['url'];?></td>
                       <td>
-                          <button type="button" class="btn btn-primary btn-xs" data-toggle="modal" data-target="#myModalLink">Edit</button>
-                          <button type="button" class="btn btn-danger btn-xs">Delete</button>
+                          <a href="#" class="edit-link" data-toggle="modal" data-target="#myModalLink" value="<?php echo $item['id'];?>">修改</a>
+                          <a href="#" data-toggle="modal" data-target="#myModal">删除</a>
                       </td>
                     </tr>
                     <?php endforeach;?>
@@ -135,7 +135,7 @@
                       <th>#</th>
                       <th>title</th>
                       <th>url</th>
-                      <th>handle</th>
+                      <th>操作</th>
                     </tr>
                     </thead>
                     <tbody>
@@ -147,8 +147,8 @@
                       <td><?php echo $item['title'];?></td>
                       <td><?php echo $item['url'];?></td>
                       <td>
-                          <button type="button" class="btn btn-primary btn-xs" data-toggle="modal" data-target="#myModalLink">Edit</button>
-                          <button type="button" class="btn btn-danger btn-xs">Delete</button>
+                          <a href="#" class="edit-link" data-toggle="modal" data-target="#myModalLink" value="<?php echo $item['id'];?>">修改</a>
+                          <a href="#" data-toggle="modal" data-target="#myModal">删除</a>
                       </td>
                     </tr>
                     <?php endforeach;?>
@@ -171,11 +171,11 @@
                         <div class="modal-body">
                             <div class="form-group add-link">
                             <label>title</label>
-                                <input class="form-control"> 
+                                <input class="form-control edit-link-title" value=""> 
                             </div>
                             <div class="form-group add-link">
                             <label>url</label>
-                                <input class="form-control"> 
+                                <input class="form-control edit-link-url" value=""> 
                             </div>
                             
                         </div>

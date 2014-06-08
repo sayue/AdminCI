@@ -7,6 +7,7 @@ class News extends CI_Controller
         $data['meeting'] = $this->show_model->shownews('meeting');
         $data['visit'] = $this->show_model->shownews('visit');
         $data['prize'] = $this->show_model->shownews('prize');
+        $data['jsfile'] = 'js/news/newslist.js';
         $this->load->view('home',$data);
         $this->load->view('news/newslist');
         //$this->session->sess_destroy();
@@ -18,6 +19,14 @@ class News extends CI_Controller
     	$data['jsfile'] = 'js/news/addlist.js';
     	$this->load->view('home',$data);
     	$this->load->view('news/addnews');
+    }
+
+    public function shownewsid($id){
+        //$id = $this->input->post('newsid');
+        $result = $this->show_model->shownewsbyid($id);
+        $result = implode("%",$result);
+        echo $result;
+        //return $result;
     }
 }
 
