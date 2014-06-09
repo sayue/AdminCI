@@ -14,7 +14,8 @@ class Admin extends CI_Controller
     }
 
     public function add(){
-    	$this->load->view('home');
+        $data['jsfile'] = 'js/admin/adminadd.js';
+    	$this->load->view('home',$data);
     	$this->load->view('admin/adminadd');
     }
 
@@ -37,6 +38,35 @@ class Admin extends CI_Controller
         }else{
             echo "<script>alert('修改失败');</script>";
             redirect('admin','refresh');
+        }
+    }
+
+    public function exist()
+    {
+        $email = $this->input->post('email',TRUE);
+
+        if ($this->admin_model->exist_admin($email) == TRUE) {
+            echo "exist";
+        } else {
+            echo "not exist";
+        }
+    }
+
+    public function addadmin(){
+        $email = $this->input->post('email',TRUE);
+        $password = $this->input->post('pwd',TRUE);
+        //echo $email.$password;
+        $data = array(
+            'username' => $email,
+            'password' => md5($password)
+            );
+        $result = $this->admin_model->addadmins($data);
+        if($result == true){
+            echo "<script>alert('成功增加管理员');</script>";
+            redirect('admin/add','refresh');
+        }else{
+            echo "<script>alert('增加管理员失败');</script>";
+            redirect('admin/add','refresh');
         }
     }
 }

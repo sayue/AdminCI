@@ -55,6 +55,26 @@ class News extends CI_Controller
             redirect('news','refresh');
         }
     }
+
+    public function addnews(){
+        $content = $this->input->post('add-news-content',TRUE);
+        $description = $this->input->post('add-news-desc',TRUE);
+        $kind = $this->input->post('kind',TRUE);
+        $data = array(
+            'content' => $content,
+            'description' => $description,
+            'kind' => $kind
+            );
+        $table = 'news';
+        $result = $this->add_model->additem($table,$data);
+        if($result == true){
+            echo "<script>alert('成功增加一条动态');</script>";
+            redirect('news/add','refresh');
+        }else{
+            echo "<script>alert('增加动态失败');</script>";
+            redirect('news/add','refresh');
+        }
+    }
 }
 
 /* End of file news.php */

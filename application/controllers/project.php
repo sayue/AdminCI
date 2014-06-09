@@ -15,7 +15,8 @@ class Project extends CI_Controller
     }
 
     public function add(){
-    	$this->load->view('home');
+        $data['jsfile'] = 'js/project/addproject.js';
+    	$this->load->view('home',$data);
     	$this->load->view('project/addproject');
     }
 
@@ -60,6 +61,26 @@ class Project extends CI_Controller
         }else{
             echo "<script>alert('删除失败');</script>";
             redirect('project','refresh');
+        }
+    }
+
+    public function addproject(){
+        $title = $this->input->post('add-project-title',TRUE);
+        $intro = $this->input->post('add-project-intro',TRUE);
+        $kind = $this->input->post('kind',TRUE);
+        $data = array(
+            'kind' => $kind,
+            'title' => $title,
+            'intro' => $intro
+            );
+        $table = 'project';
+        $result = $this->add_model->additem($table,$data);
+        if($result == true){
+            echo "<script>alert('成功增加一个项目');</script>";
+            redirect('project/add','refresh');
+        }else{
+            echo "<script>alert('增加项目失败');</script>";
+            redirect('project/add','refresh');
         }
     }
     

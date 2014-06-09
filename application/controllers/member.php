@@ -65,6 +65,39 @@ class Member extends CI_Controller
             redirect('member','refresh');
         }
     }
+
+    public function addmember(){
+        $name = $this->input->post('add-mem-name',TRUE);
+        $birth = $this->input->post('add-mem-birth',TRUE);
+        $position = $this->input->post('add-mem-position',TRUE);
+        $degree = $this->input->post('add-mem-degree',TRUE);
+        $field = $this->input->post('add-mem-field',TRUE);
+        $department = $this->input->post('add-mem-department',TRUE);
+        $institution = $this->input->post('add-mem-institution',TRUE);
+        $sex = $this->input->post('optionsRadiosInline',TRUE);
+        $intro = $this->input->post('add-mem-intro',TRUE);
+
+        $data = array(
+            'name' => $name,
+            'sex' => $sex,
+            'birth' => $birth,
+            'position' => $position,
+            'degree' => $degree,
+            'field' => $field,
+            'department' => $department,
+            'institution' => $institution,
+            'intro' => $intro
+            );
+        $table = 'member';
+        $result = $this->add_model->additem($table,$data);
+        if($result == true){
+            echo "<script>alert('成功增加一位成员');</script>";
+            redirect('member/add','refresh');
+        }else{
+            echo "<script>alert('增加成员失败');</script>";
+            redirect('member/add','refresh');
+        }
+    }
 }
 
 /* End of file member.php */

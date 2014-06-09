@@ -116,6 +116,41 @@ class Resource extends CI_Controller
         }
     }
 
+    public function addpublish($kind){
+        if($kind == 'magazine'){
+            $title = $this->input->post('add-mag-title',TRUE);
+            $intro = $this->input->post('add-mag-intro',TRUE);
+            $data = array(
+                'kind' => 'magazine',
+                'title' => $title,
+                'intro' => $intro
+                );
+        }elseif($kind == 'book'){
+            $title = $this->input->post('add-book-title',TRUE);
+            $author = $this->input->post('add-book-author',TRUE);
+            $publisher = $this->input->post('add-book-publisher',TRUE);
+            $date = $this->input->post('add-book-date',TRUE);
+            $intro = $this->input->post('add-book-intro',TRUE);
+            $data = array(
+                'kind' => 'book',
+                'title' => $title,
+                'intro' => $intro,
+                'author' => $author,
+                'publisher' => $publisher,
+                'date' => $date
+                );
+        }
+        $table = 'resource';
+        $result = $this->add_model->additem($table,$data);
+        if($result == true){
+            echo "<script>alert('成功增加一本读物');</script>";
+            redirect('resource/add','refresh');
+        }else{
+            echo "<script>alert('增加读物失败');</script>";
+            redirect('resource/add','refresh');
+        }
+    }
+
 }
 
 /* End of file resource.php */

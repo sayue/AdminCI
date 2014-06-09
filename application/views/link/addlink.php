@@ -23,24 +23,26 @@
                     </div>
    
                       <div class="panel-body" id="addBook">
+                          <form action="<?php echo site_url('link/addlink'); ?>" method="post">
                             <div class="form-group member-add">
                                 <label>title</label>
-                                <input class="form-control"> 
+                                <input class="form-control" name="add-link-title"> 
                             </div>
                             
                             <div class="form-group member-add">
                                 <label>url</label>
-                                <input class="form-control"> 
+                                <input class="form-control" name="add-link-url"> 
                             </div>
                             <div class="form-group member-add">
-                             <select class="form-control">
-                                <option>校内机构</option>
-                                <option>国家机构</option>
-                                <option>教学科研机构</option>
-                                <option>学术网站</option>
+                             <select class="form-control" name="add-link-kind">
+                                <option value="school">校内机构</option>
+                                <option value="country">国家机构</option>
+                                <option value="science">教学科研机构</option>
+                                <option value="academic">学术网站</option>
                             </select>
                             </div>
-                                <button type="button" class="btn btn-outline btn-primary" name="addcomfirm">确认添加</button>
+                                <button type="submit" class="btn btn-outline btn-primary" name="addcomfirm">确认添加</button>
+                            </form>
                             </div>
 					</div>
 				</div>

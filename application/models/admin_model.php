@@ -64,6 +64,16 @@ class Admin_model extends CI_Model
 			return false;
 		}
 	}
+
+	public function addadmins($data){
+		
+		$this->db->insert('admin',$data);
+		if($this->db->affected_rows() == 1){
+			return true;
+		}else{
+			return false;
+		}
+	}
 }
 
 

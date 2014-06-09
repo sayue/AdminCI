@@ -57,6 +57,27 @@ class Link extends CI_Controller
             redirect('link','refresh');
         }
     }
+
+    public function addlink(){
+        $title = $this->input->post('add-link-title',TRUE);
+        $url = $this->input->post('add-link-url',TRUE);
+        $kind = $this->input->post('add-link-kind',TRUE);
+        //echo $kind;
+        $data = array(
+            'kind' => $kind,
+            'title' => $title,
+            'url' => $url
+            );
+        $table = 'link';
+        $result = $this->add_model->additem($table,$data);
+        if($result == true){
+            echo "<script>alert('成功增加一条链接');</script>";
+            redirect('link/add','refresh');
+        }else{
+            echo "<script>alert('增加链接失败');</script>";
+            redirect('link/add','refresh');
+        }
+    }
 }
 
 /* End of file link.php */

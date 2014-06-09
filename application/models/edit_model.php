@@ -117,4 +117,4 @@ class Edit_model extends CI_Model{
 	}
 }
 
-/* End of file cms/show_model.php */
+/* End of file show_model.php */

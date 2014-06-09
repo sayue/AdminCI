@@ -9,16 +9,18 @@
                 });
                 
                 var option = $(this).val();
-                if(option == 'option3' && i == 2){
+                if(option == 'prize' && i == 2){
                     
-                    var div = "<div class=\"form-group\"><label>Description</label><textarea class=\"form-control\" rows=\"3\"></textarea></div>";
+                    var div = "<div class=\"form-group\"><label>Description</label><textarea class=\"form-control\" name=\"add-news-desc\" rows=\"3\"></textarea></div>";
                     $("button[name='addcomfirm']").before(div);
                     flag = false;
                     
-                }else if((option == 'option1' || option == 'option2') && i == 3){
+                }else if((option == 'meeting' || option == 'visit') && i == 3){
                     $(".form-group:last").remove();
                 }
 
+                var kind = $("input[name='optionsRadiosInline']:checked").val();
+                $("input[name='kind']").attr("value",kind);
            });
           
         });
