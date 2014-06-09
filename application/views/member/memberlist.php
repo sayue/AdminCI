@@ -46,7 +46,7 @@
                           <td><?php echo $item['field'];?></td>
                           <td>
                               <a href="#" class="edit-member" data-toggle="modal" data-target="#myModalMember" value="<?php echo $item['id'];?>">修改</a>
-                              <a href="#" data-toggle="modal" data-target="#myModal">删除</a>
+                              <a href="<?php echo site_url('member/delete').'/'.$item['id'];?>" class="delete-member">删除</a>
                           </td>
                         </tr>
                         <?php endforeach;?>
@@ -61,6 +61,8 @@
             
                 <!--begin of magazine div-->
                 <div class="modal fade" id="myModalMember" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                        <form action="<?php echo site_url('member/edit'); ?>" method="post">
+                        <input type="text" name="memberid" value="" hidden>
                         <div class="modal-dialog">
                         <div class="modal-content">
                         <div class="modal-header">
@@ -72,31 +74,31 @@
 
                             <div class="form-group member-edit">
                                 <label>姓名</label>
-                                <input class="form-control edit-mem-name" value=""> 
+                                <input class="form-control edit-mem-name" name ="edit-mem-name" value=""> 
                             </div>
                             <div class="form-group member-edit">
                                 <label>职称</label>
-                                <input class="form-control edit-mem-position" value=""> 
+                                <input class="form-control edit-mem-position" name="edit-mem-position" value=""> 
                             </div>
                             <div class="form-group member-edit">
                                 <label>学位</label>
-                                <input class="form-control edit-mem-degree" value=""> 
+                                <input class="form-control edit-mem-degree" name="edit-mem-degree" value=""> 
                             </div>
                             <div class="form-group member-edit">
                                 <label>研究领域</label>
-                                <input class="form-control edit-mem-field" value=""> 
+                                <input class="form-control edit-mem-field" name="edit-mem-field" value=""> 
                             </div>
                             <div class="form-group member-edit">
                                 <label>院系（选填）</label>
-                                <input class="form-control edit-mem-department"> 
+                                <input class="form-control edit-mem-department" name="edit-mem-department"> 
                             </div>
                             <div class="form-group member-edit">
                                 <label>工作单位（选填）</label>
-                                <input class="form-control edit-mem-institution"> 
+                                <input class="form-control edit-mem-institution" name="edit-mem-institution"> 
                             </div>
                             <div class="form-group">
                             <label>个人简介</label>
-                            <textarea class="form-control edit-mem-intro" rows="10"></textarea>
+                            <textarea class="form-control edit-mem-intro" name="edit-mem-intro" rows="10"></textarea>
                             </div>
                             <div class="form-group">
                                 <label>个人照片上传（可选）</label>
@@ -106,10 +108,11 @@
                         </div>
                         <div class="modal-footer">
                             <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
-                            <button type="button" class="btn btn-primary">保存</button>
+                            <button type="submit" class="btn btn-primary">保存</button>
                         </div>
                         </div><!-- /.modal-content -->
                         </div><!-- /.modal-dialog -->
+                        </form>
                 </div><!-- /.modal -->
                 <!--end of magazine div-->
                 

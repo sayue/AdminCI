@@ -26,6 +26,37 @@ class Link extends CI_Controller
         $result = implode("%",$result);
         echo $result;
     }
+
+    public function edit(){
+        $id = $this->input->post('linkid',TRUE);
+        $title = $this->input->post('edit-link-title',TRUE);
+        $url = $this->input->post('edit-link-url',TRUE);
+
+        $data = array(
+            'title' => $title,
+            'url' => $url
+            );
+        $result = $this->edit_model->editlink($id,$data);
+        if($result == true){
+            echo "<script>alert('修改成功');</script>";
+            redirect('link','refresh');
+        }else{
+            echo "<script>alert('修改失败');</script>";
+            redirect('link','refresh');
+        }
+    }
+
+    public function delete($id){
+        $kind = 'link';
+        $result = $this->edit_model->delete($kind,$id);
+        if($result == true){
+            echo "<script>alert('删除成功');</script>";
+            redirect('link','refresh');
+        }else{
+            echo "<script>alert('删除失败');</script>";
+            redirect('link','refresh');
+        }
+    }
 }
 
 /* End of file link.php */

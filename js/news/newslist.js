@@ -3,6 +3,7 @@ $(document).ready(function(){
 	$('.edit-news').on("click",function(){
 		var id = $(this).attr("value");
 		//alert(id);
+		$("input[name='newsid']").attr("value",id);
 		$.get("./news/shownewsid/"+id, function(data){
    			var arr = new Array();
    			arr = data.split('%');
@@ -10,5 +11,11 @@ $(document).ready(function(){
  			$('.edit-title').attr("value",arr[1]);
  			$('.edit-description').html(arr[2]);
  		});
+	});
+
+	$('.delete-news').on("click",function(){
+		if(!confirm('确认要删除这条学术动态吗？')){
+			window.event.returnValue = false;
+		}
 	});
 });

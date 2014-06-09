@@ -53,6 +53,17 @@ class Admin_model extends CI_Model
 		$rowAdmin = $queryAdmin->row();
 		return $rowAdmin->administrator;
 	}
+
+	public function editpwd($pwd){
+		$username = $this->session->userdata('email');
+		$this->db->where('username',$username);
+		$this->db->update('admin',array('password' => md5($pwd)));
+		if($this->db->affected_rows() == 1){
+			return true;
+		}else{
+			return false;
+		}
+	}
 }
 
 

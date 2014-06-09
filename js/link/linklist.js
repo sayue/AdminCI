@@ -3,6 +3,8 @@ $(document).ready(function(){
 	$('.edit-link').on("click",function(){
 		var id = $(this).attr("value");
 		//alert(id);
+		$("input[name='linkid']").attr("value",id);
+		
 		$.get("./link/showlink/"+id, function(data){
    			var arr = new Array();
    			arr = data.split('%');
@@ -11,4 +13,11 @@ $(document).ready(function(){
  			$('.edit-link-url').attr('value',arr[2]);
  		});
 	});
+
+	$('.delete-link').on("click",function(){
+		if(!confirm('确认要删除这个网站链接吗？')){
+			window.event.returnValue = false;
+		}
+	});
+
 });

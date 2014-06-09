@@ -12,9 +12,20 @@ class Intro extends CI_Controller
         
         $this->load->view('intro');
       
-        //$this->session->sess_destroy();
-        //print_r($this->session->all_userdata());
-        //echo $this->session->userdata('email');
+    }
+
+    public function edit(){
+        $content = $this->input->post('edit-content',TRUE);
+        $id = $this->input->post('introid',TRUE);
+        // echo $content.$id;
+        $result = $this->edit_model->editintrobyid($content,$id);
+        if($result == true){
+            echo "<script>alert('修改成功');</script>";
+            redirect('intro','refresh');
+        }else{
+            echo "<script>alert('修改失败');</script>";
+            redirect('intro','refresh');
+        }
     }
 }
 

@@ -16,7 +16,7 @@
                       文献收藏
                     </div>
                   <div class="panel-body">
-				  
+				  <form action="<?php echo site_url('resource/editdoc'); ?>" method="post">
 					<table class="table table-bordered">
         <thead>
           <tr>
@@ -38,24 +38,26 @@
           <tr>
           	<td>学校图书馆</td>
 
-            <td><input class="form-control" value="<?php echo $item['lib_zh_book'];?>"></td>
-            <td><input class="form-control" value="<?php echo $item['lib_en_book'];?>"></td>
-            <td><input class="form-control" value="<?php echo $item['lib_zh_mag'];?>"></td>
-            <td><input class="form-control" value="<?php echo $item['lib_en_mag'];?>"></td>
+            <td><input class="form-control" name="lib_zh_book" value="<?php echo $item['lib_zh_book'];?>"></td>
+            <td><input class="form-control" name="lib_en_book" value="<?php echo $item['lib_en_book'];?>"></td>
+            <td><input class="form-control" name="lib_zh_mag" value="<?php echo $item['lib_zh_mag'];?>"></td>
+            <td><input class="form-control" name="lib_en_mag" value="<?php echo $item['lib_en_mag'];?>"></td>
           </tr>
           <tr>
             <td>申报机构资料室</td>
-            <td><input class="form-control" value="<?php echo $item['doc_zh_book'];?>"></td>
-            <td><input class="form-control" value="<?php echo $item['doc_en_book'];?>"></td>
-            <td><input class="form-control" value="<?php echo $item['doc_zh_mag'];?>"></td>
-            <td><input class="form-control" value="<?php echo $item['doc_en_mag'];?>"></td>
+            <td><input class="form-control" name="doc_zh_book" value="<?php echo $item['doc_zh_book'];?>"></td>
+            <td><input class="form-control" name="doc_en_book" value="<?php echo $item['doc_en_book'];?>"></td>
+            <td><input class="form-control" name="doc_zh_mag" value="<?php echo $item['doc_zh_mag'];?>"></td>
+            <td><input class="form-control" name="doc_en_mag" value="<?php echo $item['doc_en_mag'];?>"></td>
           </tr>
         </tbody>
 
         <?php endforeach;?>
         <?php endif;?>
       </table>
-					<button type="button" class="btn btn-outline btn-primary">确认修改</button>
+      
+					<button type="submit" class="btn btn-outline btn-primary">确认修改</button>
+          </form>
 				  </div>
                 </div>
                 <!-- /.col-lg-12 -->

@@ -3,7 +3,7 @@ $(document).ready(function(){
 	$('.edit-magazine').on("click",function(){
 		var id = $(this).attr("value");
 		//alert(id);
-		
+		$("input[name='magazineid']").attr("value",id);		
 		$.get("../resource/showpubbyid/"+id, function(data){
    			var arr = new Array();
    			arr = data.split('%');
@@ -16,7 +16,7 @@ $(document).ready(function(){
 	$('.edit-book').on("click",function(){
 		var id = $(this).attr("value");
 		//alert(id);
-		
+		$("input[name='bookid']").attr("value",id);
 		$.get("../resource/showpubbyid/"+id, function(data){
    			var arr = new Array();
    			arr = data.split('%');
@@ -28,5 +28,19 @@ $(document).ready(function(){
  			$('.edit-book-desc').html(arr[2]);
  		});
 	});
+
+	$('.delete-magazine').on("click",function(){
+		if(!confirm('确认要删除这本杂志吗？')){
+			window.event.returnValue = false;
+		}
+	});
+
+	$('.delete-book').on("click",function(){
+		if(!confirm('确认要删除这本书吗？')){
+			window.event.returnValue = false;
+		}
+	});
+
+
 });
 

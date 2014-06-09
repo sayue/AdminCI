@@ -25,6 +25,44 @@ class Project extends CI_Controller
         //$result = 'hello';
         echo $result;
     }
+
+    public function edit($kind){
+        if($kind == 'academic'){
+            $id = $this->input->post('academicid',TRUE);
+            $title = $this->input->post('edit-aca-title',TRUE);
+            $intro = $this->input->post('edit-aca-intro',TRUE);
+        }elseif($kind == 'practical'){
+            $id = $this->input->post('practicalid',TRUE);
+            $title = $this->input->post('edit-prac-title',TRUE);
+            $intro = $this->input->post('edit-prac-intro',TRUE);
+        }
+        
+        $data = array(
+            'title' => $title,
+            'intro' => $intro
+            );
+        $result = $this->edit_model->editproject($id,$data);
+        if($result == true){
+            echo "<script>alert('修改成功');</script>";
+            redirect('project','refresh');
+        }else{
+            echo "<script>alert('修改失败');</script>";
+            redirect('project','refresh');
+        }
+    }
+
+    public function delete($id){
+        $kind = 'project';
+        $result = $this->edit_model->delete($kind,$id);
+        if($result == true){
+            echo "<script>alert('删除成功');</script>";
+            redirect('project','refresh');
+        }else{
+            echo "<script>alert('删除失败');</script>";
+            redirect('project','refresh');
+        }
+    }
+    
 }
 
 /* End of file project.php */

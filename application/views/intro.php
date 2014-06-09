@@ -1,3 +1,7 @@
+<style type="text/css">
+    
+</style>
+
 <div id="page-wrapper">
             <div class="row">
                 <div class="col-lg-12">
@@ -35,6 +39,8 @@
             
 
                 <div class="modal fade" id="myModal<?php echo $id[$i++];?>" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                        <form action="<?php echo site_url('intro/edit'); ?>" method="post">
+                        <input type="text" name="introid" value="<?php echo $item['id']; ?>" hidden>
                         <div class="modal-dialog">
                         <div class="modal-content">
                         <div class="modal-header">
@@ -42,16 +48,18 @@
                             <h4 class="modal-title" id="myModalLabel"><?php echo $item['kind'];?></h4>
                         </div>
                         <div class="modal-body">
-                        <textarea class="form-control" rows="12">
+                        <textarea class="form-control" rows="12" name="edit-content">
                             <?php echo $item['content'];?>
                         </textarea>
                         </div>
                         <div class="modal-footer">
                             <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
-                            <button type="button" class="btn btn-primary">保存</button>
+
+                            <button type="submit" class="btn btn-primary">保存</button>
                         </div>
                         </div><!-- /.modal-content -->
                         </div><!-- /.modal-dialog -->
+                        </form>
                     </div><!-- /.modal -->
 
                     <?php endforeach;?>

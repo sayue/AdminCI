@@ -3,6 +3,7 @@ $(document).ready(function(){
 	$('.edit-member').on("click",function(){
 		var id = $(this).attr("value");
 		//alert(id);
+		$("input[name='memberid']").attr("value",id);
 		$.get("./member/showmember/"+id, function(data){
    			var arr = new Array();
    			arr = data.split('%');
@@ -15,5 +16,11 @@ $(document).ready(function(){
  			$('.edit-mem-institution').attr("value",arr[6]);
  			$('.edit-mem-intro').html(arr[7]);
  		});
+	});
+
+	$('.delete-member').on("click",function(){
+		if(!confirm('确认要删除这个成员资料吗？')){
+			window.event.returnValue = false;
+		}
 	});
 });

@@ -40,7 +40,7 @@
                       <td><?php echo $item['url'];?></td>
                       <td>
                           <a href="#" class="edit-link" data-toggle="modal" data-target="#myModalLink" value="<?php echo $item['id'];?>">修改</a>
-                          <a href="#" data-toggle="modal" data-target="#myModal">删除</a>
+                          <a href="<?php echo site_url('link/delete').'/'.$item['id'];?>" class="delete-link">删除</a>
                       </td>
                     </tr>
                     <?php endforeach;?>
@@ -77,7 +77,7 @@
                       <td><?php echo $item['url'];?></td>
                       <td>
                           <a href="#" class="edit-link" data-toggle="modal" data-target="#myModalLink" value="<?php echo $item['id'];?>">修改</a>
-                          <a href="#" data-toggle="modal" data-target="#myModal">删除</a>
+                          <a href="<?php echo site_url('link/delete').'/'.$item['id'];?>" class="delete-link">删除</a>
                       </td>
                     </tr>
                     <?php endforeach;?>
@@ -113,7 +113,7 @@
                       <td><?php echo $item['url'];?></td>
                       <td>
                           <a href="#" class="edit-link" data-toggle="modal" data-target="#myModalLink" value="<?php echo $item['id'];?>">修改</a>
-                          <a href="#" data-toggle="modal" data-target="#myModal">删除</a>
+                          <a href="<?php echo site_url('link/delete').'/'.$item['id'];?>" class="delete-link">删除</a>
                       </td>
                     </tr>
                     <?php endforeach;?>
@@ -148,7 +148,7 @@
                       <td><?php echo $item['url'];?></td>
                       <td>
                           <a href="#" class="edit-link" data-toggle="modal" data-target="#myModalLink" value="<?php echo $item['id'];?>">修改</a>
-                          <a href="#" data-toggle="modal" data-target="#myModal">删除</a>
+                          <a href="<?php echo site_url('link/delete').'/'.$item['id'];?>" class="delete-link">删除</a>
                       </td>
                     </tr>
                     <?php endforeach;?>
@@ -161,6 +161,8 @@
 
                 <!--begin of edit newslist-->
                 <div class="modal fade" id="myModalLink" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                        <form action="<?php echo site_url('link/edit'); ?>" method="post">
+                        <input type="text" name="linkid" value="" hidden>
                         <div class="modal-dialog">
                         <div class="modal-content">
                         <div class="modal-header">
@@ -171,20 +173,21 @@
                         <div class="modal-body">
                             <div class="form-group add-link">
                             <label>title</label>
-                                <input class="form-control edit-link-title" value=""> 
+                                <input class="form-control edit-link-title" name="edit-link-title" value=""> 
                             </div>
                             <div class="form-group add-link">
                             <label>url</label>
-                                <input class="form-control edit-link-url" value=""> 
+                                <input class="form-control edit-link-url" name="edit-link-url" value=""> 
                             </div>
                             
                         </div>
                         <div class="modal-footer">
                             <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
-                            <button type="button" class="btn btn-primary">保存</button>
+                            <button type="submit" class="btn btn-primary">保存</button>
                         </div>
                         </div><!-- /.modal-content -->
                         </div><!-- /.modal-dialog -->
+                        </form>
                 </div><!-- /.modal -->
                 <!--end of newslist div-->
 
