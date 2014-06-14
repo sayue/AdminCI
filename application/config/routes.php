@@ -38,8 +38,8 @@
 |
 */
 
-$route['default_controller'] = "login";
-$route['home'] = "home";
+$route['default_controller'] = "cms/login";
+// $route['cms/(:any)'] = "cms";
 $route['404_override'] = '';
 
 
