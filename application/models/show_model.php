@@ -144,6 +144,29 @@ class Show_model extends CI_Model{
 			return false;
 		}
 	}
+
+	//首页学术动态显示，按时间先后排序
+	public function home_shownews(){
+		$this->db->limit(5,0);
+		$this->db->order_by('editime','desc');
+		$query = $this->db->get('news');
+
+		if($query->num_rows() > 0){
+			return $query->result_array();
+		}else{
+			return false;
+		}
+	}
+
+	public function home_notice(){
+		$sql = "select id,content,date,editime from news union select id,title as content,date,editime from project order by editime desc limit 5";
+		$query = $this->db->query($sql);
+		if($query->num_rows() > 0){
+			return $query->result_array();
+		}else{
+			return false;
+		}
+	}
 }
 
 

@@ -1,0 +1,237 @@
+body{
+	background: url("../../images/bg.jpg") repeat;
+}
+.fnt_April{
+	font-family: "Arial";
+}
+/************************************container****************************************/
+.container{
+	width: 1145px;
+	margin: 0 auto;
+	text-align: center;
+}
+/****************************************header****************************************/
+.header{
+	background: url('../../images/header_bg1.jpg') no-repeat;
+	padding:15px 93px 0 117px;
+	height: 267px;
+	min-width: 1028px;
+
+}
+.header_top{
+	width: 892px;
+	clear: both;
+	overflow: hidden;
+
+}
+.logo{
+	float: left;
+	clear: right;
+}
+/*******************search************************/
+.search{
+	float: right;
+	overflow: hidden;
+	width: 300px;
+}
+.search span{
+	background: url('../../images/search_icon.png') no-repeat;
+	_background: url('../../images/search_icon.jpg') no-repeat;/*IE*/
+	float: left;
+	width: 37px;
+	height: 26px;
+	margin-top: 2px;
+	margin-right: 3px;
+}
+.search form{
+	margin-top: 2px;
+}
+.search .input_text{
+	border: 2px solid #afafaf;
+	color: #818181;
+	font-size: 14px;
+	line-height: 24px;
+	height: 24px;
+	width: 176px;
+}
+.search .btn{
+	background: url("../../images/search_btn.jpg") no-repeat;
+	border: none;
+	cursor: pointer;
+	height: 25px;
+	text-indent: -9999px;
+	width: 66px;
+	
+}
+.banben{
+	float: left;
+	width: 300px;
+	margin-top: 5px;
+	margin-left: 3px;
+}
+.banben a{
+	float: left;
+	display: inline;
+	background-color: #fff;
+	filter:Alpha(opacity=40); 
+	opacity:0.4;
+	padding: 3px 20px;
+	_padding: 3px 17px;
+	margin-left: 4%;
+	font-size: 14px;
+	font-weight: bold;
+	color: #000;
+}
+.banben a:first-child{
+	margin-left: 0;
+}
+.banben a:hover{
+	background-color: #56663e;
+	filter:Alpha(opacity=100); 
+	opacity:1;
+	color: #fff;
+}
+/*****************header_center**********************/
+.header_center{
+	background: url("../../images/title.jpg") no-repeat;
+	clear: both;
+	height: 128px;
+	width: 621px;
+	text-indent: -999em;
+}
+/***************************nav***********************/
+.nav{
+	margin-top: 20px;
+}
+.nav ul,ul.subnav{
+	float: left;
+
+}
+.nav li{
+	border-top: 1px solid #252525;
+	border-bottom: 1px solid #252525;
+	float: left;
+	margin-right: 18px;
+}
+.nav li a{
+	color: #56663e;
+	display: block;
+	font-size: 16px;
+	font-weight: bold;
+	padding: 15px 24px;
+	text-align: left;
+}
+
+.nav a:hover ,
+.nav a:focus{
+	background-color: #56663e;
+	color: #fff;
+}
+.subnav ul{
+	background-color: #fff;
+	filter:Alpha(opacity=60); 
+	opacity:0.6;
+	position: absolute;
+	display: none;
+	_width:200px;
+	margin-top: 0px;
+}
+
+.subnav li{
+	border: none;
+	float: none;
+	margin-right: 0;
+	width: 200px;
+}
+.subnav li a{
+	color: #000;
+	font-size: 15px;
+	padding: 10px 12px;
+}
+.subnav a:hover {
+	background-color: #56663e;
+	filter:Alpha(opacity=100); 
+	opacity:1;
+	color: #fff;
+}
+
+/***************************************************content****************************/
+.content{
+	background: url('../../images/content_bg1.jpg') no-repeat 0 0;
+	padding:33px 0 87px 117px;
+	width: 1028px;
+	min-height: 508px;
+	text-align: left;
+	overflow:hidden;
+}
+.top_content{
+	margin-top: 25px;
+	margin-bottom: 30px;
+}
+
+.top_content p,.bottom_content p{
+	cursor: default;
+	display: inline;
+	font-size: 20px;
+	font-weight: bold;
+}
+.top_content p a,.bottom_content p a{
+	margin-left: 200px;
+	font-size: 14px;
+}
+.content a{
+	color: #017e3c;
+}
+.content ul{
+	font-size: 14px;
+	margin-top: 10px;
+}
+.content li{
+	padding: 2px 0;
+}
+.content li span{
+	cursor: default;
+	color: #017E3C;
+}
+a.fnt_000{
+	color: #000;
+}
+a.fnt_April{
+	font-family: Arial;
+}
+.content a:hover{
+	color: #ff001e;
+	text-decoration: underline;
+}
+
+/******************************************footer***************************/
+.footer{
+	background: url('../../images/footer_bg1.jpg') no-repeat;
+	width: 1145px;
+	overflow: hidden;
+	height: 89px;
+	text-align: center;
+	font-size: 12px;
+	padding-top: 20px;
+
+}
+.footer p{
+	padding: 2px 0;
+}
+.footer a{
+	color: #000;
+	border-left: 1px solid #000;
+	padding-left: 15px;
+	padding-right: 15px;
+}
+.footer a:last-child{
+	border-right: 1px solid #000;
+}
+.footer a:hover{
+	color: #ff001e;
+	text-decoration: underline;
+}
+.footer p span{
+	cursor: default;
+	margin-right: 15px;
+}
