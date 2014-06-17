@@ -1,0 +1,158 @@
+/*******************breadCrumbNav*****************/
+
+.breadCrumbNav{
+	font-size: 14px;
+}
+.breadCrumbNav span{
+	cursor: default;
+}
+.breadCrumbNav a{
+	color: #000;
+}
+.breadCrumbNav a:hover{
+	color: #ff001e;
+}
+/******************************************txt*****/
+.txt{
+	cursor: default;
+	margin-top: 20px;
+	margin-bottom: 10px;
+	text-indent: 2em;
+	line-height: 2;
+	font-size: 14px;
+}
+.txt span{
+	margin-right: 5px;
+}
+.txt a{
+	color: #000;
+}
+.txt a:hover{
+	color: #017e3c;
+	text-decoration: underline;
+}
+
+/********************************************txt_list************/
+.txt_list{
+	 margin-top: 20px;
+}
+.txt_list p,.txt_list ul{
+	cursor: default;
+
+}
+.txt_list p{
+	font-size: 18px;
+}
+.txt_list .more,.txt_list span{
+	float: right;
+}
+.txt_list ul li{
+	padding: 5px 0;
+}
+.txt_list a{
+	color: #000;
+	font-size: 14px;
+	padding: 5px 0;
+}
+.txt_list a:hover{
+	color: #017e3c;
+	text-decoration: underline;
+}
+
+/***************************************content_intro*************************/
+.content_intro{
+	background-color: #d7c8b1;
+	float: left;
+	filter:Alpha(opacity=90); 
+	opacity:0.9;
+	padding-top: 61px;
+	width: 180px;
+	height: 588px;
+	cursor: default;
+}
+.content_intro p{
+	color: #856141;
+	font-size: 12px;
+	padding: 7px 15px;
+}
+
+.content_intro p.now{
+	background-color: #fdf9f6;
+	font-size: 14px;
+	font-weight: bold;
+	text-align: center;
+}
+.content_intro p img{
+	text-align: center;
+	margin-top: 10px;
+}
+.content_intro a{
+	color: #856141;
+}
+.content_intro a:hover{
+	text-decoration: underline;
+}
+
+.content_main .intro,.content_main .book_intro{
+	margin-top: 24px;
+	cursor: default;
+}
+.content_main .intro p,.content_main .book_intro p{
+	margin-top: 5px;
+	line-height: 2;
+}
+.content_main .intro p{
+	text-indent: 2em;
+}
+/*****************************fanye*************************/
+.fenye{
+	font-size: 14px;
+	position: absolute;
+	/*top: 370px;*/
+	top: 912px;
+	left: 658px;
+	text-align: center;
+}
+.fenye span{
+	cursor: default;
+}
+.fenye a{
+	color: #000;
+}
+.fenye a:hover{
+	color: #017e3c;
+	text-decoration: underline; 
+}
+/**************************introduction*********************/
+.introduction p{
+	margin-top: 40px;
+	overflow: hidden;
+}
+.introduction a{
+	float: left;
+	color: #000;
+	margin-left: 106px;
+	text-align: center;
+}
+.introduction a:hover span{
+	color: #017e3c;
+	text-decoration: underline; 
+}
+.introduction a span{
+	padding-top: 5px;
+}
+/*********************tbl********************/
+.tblDiv{
+	margin-top: 10px;
+}
+.tblDiv table{
+	width: 100%;
+}
+.tblDiv thead th,
+.tblDiv th,
+.tblDiv td{
+	cursor: default;
+	text-align: center;
+	padding: 5px;
+	width: 
+}

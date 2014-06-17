@@ -77,7 +77,11 @@ class Member extends CI_Controller
         $sex = $this->input->post('optionsRadiosInline',TRUE);
         $intro = $this->input->post('add-mem-intro',TRUE);
 
+         $id = $this->show_model->max_id('member');//src命名
+        $id = $id +1;
+
         $data = array(
+            'id' => $id,
             'name' => $name,
             'sex' => $sex,
             'birth' => $birth,
@@ -86,8 +90,12 @@ class Member extends CI_Controller
             'field' => $field,
             'department' => $department,
             'institution' => $institution,
+            'src' => 'images/teacher/'.$id.'.jpg',
             'intro' => $intro
             );
+
+        $this->do_upload($id);
+
         $table = 'member';
         $result = $this->add_model->additem($table,$data);
         if($result == true){
@@ -98,6 +106,34 @@ class Member extends CI_Controller
             redirect('cms/member/add','refresh');
         }
     }
+
+     public function do_upload($id)
+ {
+    
+  $config['upload_path'] = './images/teacher/';
+  $config['allowed_types'] = 'gif|jpg|png';
+  $config['max_size'] = '1000';
+  $config['max_width']  = '150';
+  $config['max_height']  = '150';
+  $config['file_name'] = $id;
+
+  $this->load->library('upload', $config);
+ 
+  if ( ! $this->upload->do_upload())
+  {
+   $error = array('error' => $this->upload->display_errors());
+   
+   print_r($error);
+  } 
+  else
+  {
+   //$data = array('upload_data' => $this->upload->data());
+   echo "upload success";
+   //$this->load->view('upload_success', $data);
+  }
+ } 
+
+
 }
 
 /* End of file member.php */

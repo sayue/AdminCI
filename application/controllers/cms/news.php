@@ -57,13 +57,19 @@ class News extends CI_Controller
     }
 
     public function addnews(){
+        $title = $this->input->post('add-news-title',TRUE);
+        $author = $this->input->post('add-news-author',TRUE);
+        $date = $this->input->post('add-news-date',TRUE);
         $content = $this->input->post('add-news-content',TRUE);
         $description = $this->input->post('add-news-desc',TRUE);
         $kind = $this->input->post('kind',TRUE);
         $data = array(
+            'title' => $title,
             'content' => $content,
             'description' => $description,
-            'kind' => $kind
+            'author' => $author,
+            'kind' => $kind,
+            'date' => $date
             );
         $table = 'news';
         $result = $this->add_model->additem($table,$data);

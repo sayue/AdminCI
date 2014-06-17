@@ -131,14 +131,23 @@ class Resource extends CI_Controller
             $publisher = $this->input->post('add-book-publisher',TRUE);
             $date = $this->input->post('add-book-date',TRUE);
             $intro = $this->input->post('add-book-intro',TRUE);
+
+            $id = $this->show_model->max_id('resource');//src命名
+            $id = $id +1;
+            
             $data = array(
+                'id' => $id,
                 'kind' => 'book',
                 'title' => $title,
                 'intro' => $intro,
                 'author' => $author,
                 'publisher' => $publisher,
+                'src' => 'images/book/'.$id.'.jpg',
                 'date' => $date
                 );
+
+           $this->do_upload($id);
+
         }
         $table = 'resource';
         $result = $this->add_model->additem($table,$data);
@@ -150,6 +159,37 @@ class Resource extends CI_Controller
             redirect('cms/resource/add','refresh');
         }
     }
+
+    public function do_upload($id)
+ {
+
+    
+
+  $config['upload_path'] = './images/book/';
+  $config['allowed_types'] = 'gif|jpg|png';
+  $config['max_size'] = '1000';
+  $config['max_width']  = '150';
+  $config['max_height']  = '250';
+  $config['file_name'] = $id;
+  
+  
+            //echo $id;
+
+  $this->load->library('upload', $config);
+ 
+  if ( ! $this->upload->do_upload())
+  {
+   $error = array('error' => $this->upload->display_errors());
+   
+   print_r($error);
+  } 
+  else
+  {
+   //$data = array('upload_data' => $this->upload->data());
+   echo "upload success";
+   //$this->load->view('upload_success', $data);
+  }
+ } 
 
 }
 

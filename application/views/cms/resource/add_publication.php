@@ -46,7 +46,7 @@
                     </div>
                       
                       <div class="panel-body" id="addBook" style="display:none">
-                            <form action="<?php echo site_url('cms/resource/addpublish/book'); ?>" method="post">
+                            <form action="<?php echo site_url('cms/resource/addpublish/book'); ?>" method="post" enctype="multipart/form-data">
                             <div class="form-group book-edit">
                                 <label>书名</label>
                                 <input class="form-control" name="add-book-title"> 
@@ -68,8 +68,8 @@
                                 <textarea class="form-control" name="add-book-intro" rows="3"></textarea>
                             </div>
                             <div class="form-group">
-                                <label>书本图片上传</label>
-                                <input type="file">
+                                <label>书本图片上传(图片格式必须为jpg、gif、png，图片大小不得超过1Mb，最大高度：250，最大宽度：150)</label>
+                                <input type="file" name="userfile">
                             </div>
                                 <button type="submit" class="btn btn-outline btn-primary" name="addcomfirm">确认添加</button>
                             </form>

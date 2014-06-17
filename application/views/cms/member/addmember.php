@@ -23,7 +23,7 @@
                     </div>
    
                       <div class="panel-body" id="addBook">
-                        <form action="<?php echo site_url('cms/member/addmember'); ?>" method="post">
+                        <form action="<?php echo site_url('cms/member/addmember'); ?>" method="post" enctype="multipart/form-data">
                             <div class="form-group member-add">
                                 <label>姓名</label>
                                 <input class="form-control" name="add-mem-name"> 
@@ -67,8 +67,8 @@
                                 <textarea class="form-control" name="add-mem-intro" rows="3"></textarea>
                             </div>
                             <div class="form-group">
-                                <label>个人照片上传（可选）</label>
-                                <input type="file">
+                                <label>个人照片上传（可选 | 图片格式必须为jpg、gif、png，图片大小不得超过1Mb，最大高度：150，最大宽度：150）</label>
+                                <input type="file" name="userfile">
                             </div>
                                 <button type="submit" class="btn btn-outline btn-primary" name="addcomfirm">确认添加</button>
                             </form>

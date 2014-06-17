@@ -66,12 +66,18 @@ class Project extends CI_Controller
 
     public function addproject(){
         $title = $this->input->post('add-project-title',TRUE);
+        $sub = $this->input->post('add-project-sub',TRUE);
         $intro = $this->input->post('add-project-intro',TRUE);
+        $author = $this->input->post('add-project-author',TRUE);
+        $date = $this->input->post('add-project-date',TRUE);
         $kind = $this->input->post('kind',TRUE);
         $data = array(
             'kind' => $kind,
             'title' => $title,
-            'intro' => $intro
+            'sub' => $sub,
+            'intro' => $intro,
+            'author' => $author,
+            'date' => $date
             );
         $table = 'project';
         $result = $this->add_model->additem($table,$data);

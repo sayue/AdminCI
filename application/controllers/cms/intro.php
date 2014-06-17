@@ -6,7 +6,8 @@ class Intro extends CI_Controller
     public function index()
     {
     	$data['intro'] = $this->show_model->showintro();
-    	$data['id'] = ['One','Two','Three','Four','Five','Six'];
+    	$data['id'] = ['One','Two','Three','Four','Five','Six'];//after PHP 5.4
+              $data['id'] = array('One','Two','Three','Four','Five','Six');
                //$data['jsfile'] = 'js/intro.js';
               $this->load->view('cms/home',$data);
               $this->load->view('cms/intro');

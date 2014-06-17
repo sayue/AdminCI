@@ -3,8 +3,8 @@
 <head>
 	<meta http-equiv="Content-Type" content="text/html;charset=UTF-8" />
 	<title>中山大学移民与族群研究中心</title>
-	<link rel="stylesheet" href="<?php echo base_url('css/index/reset.css'); ?>" />
-	<link rel="stylesheet" href="<?php echo base_url('css/index/style.css'); ?>" />
+	<link rel="stylesheet" href="<?php echo base_url('css/reset.css'); ?>" />
+	<link rel="stylesheet" href="<?php echo base_url('css/style.css'); ?>" />
 	<script type="text/javascript" src="<?php echo base_url('js/jquery-1.10.2.js'); ?>"></script>
 	<script type="text/javascript" src="<?php echo base_url('js/index.js'); ?>"></script>
 
@@ -24,7 +24,7 @@
 						<input type="submit" value="搜索" class="btn" />
 					</form>
 					<div class="banben">
-					<a href="">回首页</a>
+					<a href="<?php echo site_url('home'); ?>">回首页</a>
 					<a href="">中文版</a>
 					<a href="" class="fnt_April">ENGLISH</a>
 				</div>
@@ -32,54 +32,54 @@
 				
 			</div>
 			<div class="header_center">
-				<a href="index.html">移民与族群研究中心</a>
+				<a href="<?php echo site_url('home'); ?>">移民与族群研究中心</a>
 			</div>
 			<div class="nav">
 				<ul>
-					<li><a href="index.html">网站首页</a></li>
-					<li class="subnav"><a href="intro.html">中心简介</a>
+					<li><a href="<?php echo site_url('home'); ?>">网站首页</a></li>
+					<li class="subnav"><a href="<?php echo site_url('intro'); ?>">中心简介</a>
 						<ul>
-							<li><a href="">历史</a></li>
-							<li><a href="">组织架构及人员组成</a></li>
-							<li><a href="">研究内容</a></li>
-							<li><a href="">研究特色</a></li>
-							<li><a href="">社会影响</a></li>
-							<li><a href="">社会评价</a></li>
+							<li><a href="<?php echo site_url('intro/index/1'); ?>">历史</a></li>
+							<li><a href="<?php echo site_url('intro/index/2'); ?>">组织架构及人员组成</a></li>
+							<li><a href="<?php echo site_url('intro/index/3'); ?>">研究内容</a></li>
+							<li><a href="<?php echo site_url('intro/index/4'); ?>">研究特色</a></li>
+							<li><a href="<?php echo site_url('intro/index/5'); ?>">社会影响</a></li>
+							<li><a href="<?php echo site_url('intro/index/6'); ?>">社会评价</a></li>
 						</ul>
 					</li>
-					<li class="subnav"><a href="zuzhijiagou.html">组织架构</a>
+					<li class="subnav"><a href="<?php echo site_url('member'); ?>">组织架构</a>
 						<ul>
-							<li><a href="">中心负责人</a></li>
-							<li><a href="">兼职研究员</a></li>
-							<li><a href="">日常工作联系人</a></li>
+							<li><a href="<?php echo site_url('member/center'); ?>">中心负责人</a></li>
+							<li><a href="<?php echo site_url('member/fulltime'); ?>">专职研究员</a></li>
+							<li><a href="<?php echo site_url('member/partime'); ?>">兼职研究员</a></li>
+							<li><a href="<?php echo site_url('member/daily'); ?>">日常工作联系人</a></li>
 						</ul>
 					</li>
-					<li class="subnav"><a href="yanjiu.html">研究项目</a>
+					<li class="subnav"><a href="<?php echo site_url('project'); ?>">研究项目</a>
 						<ul>
-							<li><a href="">学术研究</a></li>
-							<li><a href="">应用研究</a></li>
+							<li><a href="<?php echo site_url('project/academic'); ?>">学术研究</a></li>
+							<li><a href="<?php echo site_url('project/practical'); ?>">应用研究</a></li>
 						</ul>
 					</li>
-					<li class="subnav"><a href="xueshudongtai.html">学术动态</a>
+					<li class="subnav"><a href="<?php echo site_url('news'); ?>">学术动态</a>
 						<ul>
-							<li><a href="">学术会议</a></li>
-							<li><a href="">人员出访</a></li>
-							<li><a href="">获奖情况</a></li>
+							<li><a href="<?php echo site_url('news/meeting'); ?>">学术会议</a></li>
+							<li><a href="<?php echo site_url('news/visit'); ?>">人员出访</a></li>
+							<li><a href="<?php echo site_url('news/prize'); ?>">获奖情况</a></li>
 						</ul>
 					</li>
-					<li class="subnav"><a href="xueshuziyuan.html">学术资源</a>
+					<li class="subnav"><a href="<?php echo site_url('resource'); ?>">学术资源</a>
 						<ul>
-							<li><a href="">文献收藏</a></li>
-							<li><a href="">出版品</a></li>
+							<li><a href="<?php echo site_url('resource/doc'); ?>">文献收藏</a></li>
+							<li><a href="<?php echo site_url('resource'); ?>">出版品</a></li>
 						</ul>
 					</li>
-					<li class="subnav"><a href="link.html">友情链接</a>
+					<li class="subnav"><a href="<?php echo site_url('link'); ?>">友情链接</a>
 						<ul>
-							<li><a href="">教育部重点研究基地</a></li>
-							<li><a href="">校内机构</a></li>
-							<li><a href="">高等院校</a></li>
-							<li><a href="">教学科研机构</a></li>
-							<li><a href="">学术网站</a></li>
+							<li><a href="<?php echo site_url('link/lists/1'); ?>">校内机构</a></li>
+							<li><a href="<?php echo site_url('link/lists/2'); ?>">国家机构</a></li>
+							<li><a href="<?php echo site_url('link/lists/3'); ?>">教学科研机构</a></li>
+							<li><a href="<?php echo site_url('link/lists/4'); ?>">学术网站</a></li>
 						</ul>
 					</li>
 				</ul>
@@ -87,24 +87,24 @@
 		</div><!--end header-->
 		<div class="content">
 			<div class="top_content">
-				<p>学术动态<a href="" class="fnt_April">>> MORE</a></p>
+				<p>学术动态<a href="<?php echo site_url('news'); ?>" class="fnt_April">>> MORE</a></p>
 				<ul>
 
 				<?php if(isset($news)): ?>
 				<?php foreach($news as $items):?>
-					<li><a href="#" class="fnt_000"><?php if(strlen($items['content']) > 80){echo mb_substr($items['content'],0,20,'utf8').'...';}else{echo $items['content'];}?></a><span>(<?php echo $items['date']; ?>)</span></a></li>
+					<li><a href="<?php echo site_url('news/index/').'/'.$items['id'] ; ?>" class="fnt_000"><?php echo $items['title']; ?></a><span>(<?php echo $items['date']; ?>)</span></a></li>
 				<?php endforeach;?>
 				<?php endif; ?>
 					
 				</ul>
 			</div>
 			<div class="bottom_content">
-				<p>通知公告<a href="" class="fnt_April">>> MORE</a></p>
+				<p>通知公告<a href="<?php echo site_url('project'); ?>" class="fnt_April">>> MORE</a></p>
 				<ul>
 
 				<?php if(isset($notice)): ?>
 				<?php foreach($notice as $item):?>
-					<li><a href="#" class="fnt_000"><?php if(strlen($item['content']) > 80){echo mb_substr($item['content'],0,20,'utf8').'...';}else{echo $item['content'];}?></a><span>(<?php echo $item['date']; ?>)</span></a></li>
+					<li><a href="<?php if($item['kind'] == 'meeting' || $item['kind'] == 'visit' || $item['kind'] == 'prize'){echo site_url('news/index/').'/'.$item['id'] ;}else{echo site_url('project/index/').'/'.$item['id'] ;} ?>" class="fnt_000"><?php if(strlen($item['title']) > 80){echo mb_substr($item['title'],0,20,'utf8').'...';}else{echo $item['title'];}?></a><span>(<?php echo $item['date']; ?>)</span></a></li>
 				<?php endforeach;?>
 				<?php endif; ?>
 

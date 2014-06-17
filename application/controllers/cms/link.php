@@ -7,7 +7,7 @@ class Link extends CI_Controller
         $data['school'] = $this->show_model->showlink('school');
         $data['country'] = $this->show_model->showlink('country');
         $data['science'] = $this->show_model->showlink('science');
-        $data['academic'] = $this->show_model->showlink('academic');
+        $data['academic'] = $this->show_model->showlink('academic',0,false);
         $data['jsfile'] = 'js/cms/link/linklist.js';
         $this->load->view('cms/home',$data);
         $this->load->view('cms/link/linklist');

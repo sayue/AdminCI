@@ -43,12 +43,12 @@
                                 <div class="form-group">
                                     <input class="form-control" placeholder="密码" name="password" type="password" value="">
                                 </div>
-                                <div class="checkbox" >
+<!--                                 <div class="checkbox" >
                                     <label>
                                         <input name="remember" type="checkbox" value="rememberme">Remember Me
                                     </label>
                                 </div>
-                                <div>
+ -->                                <div>
                                     <button type="submit" class="btn btn-lg btn-success btn-block">登陆</button>
                                 </div>
                                 <!-- Change this to a button or input when using this as a form -->

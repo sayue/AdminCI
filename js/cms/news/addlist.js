@@ -11,7 +11,7 @@
                 var option = $(this).val();
                 if(option == 'prize' && i == 2){
                     
-                    var div = "<div class=\"form-group\"><label>Description</label><textarea class=\"form-control\" name=\"add-news-desc\" rows=\"3\"></textarea></div>";
+                    var div = "<div class=\"form-group\"><label>Description/具体描述</label><textarea class=\"form-control\" name=\"add-news-desc\" rows=\"3\"></textarea></div>";
                     $("button[name='addcomfirm']").before(div);
                     flag = false;
                     

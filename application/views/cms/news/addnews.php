@@ -24,15 +24,23 @@
                 <div class="panel panel-default">
                     <form action="<?php echo site_url('cms/news/addnews'); ?>" method="post">
                     <div class="panel-heading">
-                      学术会议
+                      
                     </div>
                   	<div class="panel-body">
                   	
-                  		<div class="form-group">
-                            <label>Title</label>
+                  	<div class="form-group">
+                            <label>Title/动态题目</label>
+                            <input class="form-control edit-title" name="add-news-title" value="">
+                            <label>author/参与者</label>
+                            <input class="form-control edit-title" name="add-news-author" value="" style="width:400px">
+                            <label>date/日期</label>
+                            <input class="form-control edit-title" name="add-news-date" value="" style="width:400px">
+                            <label>Content/内容</label>
                             <textarea class="form-control" name="add-news-content" rows="3"></textarea>
                             <input type="text" name="kind" value="meeting" hidden>
-                        </div>
+                            
+
+                            </div>
                             <button type="submit" class="btn btn-outline btn-primary" name="addcomfirm">确认添加</button>
 					          </div>
                     </form>

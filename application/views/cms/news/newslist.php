@@ -29,7 +29,7 @@
                     <?php foreach($meeting as $item):?>
                     <tr>
                       <td><?php echo $i++;?></td>
-                      <td><?php if(strlen($item['content']) > 170){echo mb_substr($item['content'],0,65,'utf8').'...';}else{echo $item['content'];}?></td>
+                      <td><?php if(strlen($item['title']) > 80){echo mb_substr($item['title'],0,80,'utf8').'...';}else{echo $item['title'];}?></td>
                       <td>
                           <a href="#" class="edit-news" data-toggle="modal" data-target="#myModal" value="<?php echo $item['id'];?>">修改</a>
                           <a href="<?php echo site_url('cms/news/delete').'/'.$item['id'];?>" class="delete-news">删除</a>
