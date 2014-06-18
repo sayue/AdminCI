@@ -8,8 +8,8 @@ $(document).ready(function(){
    			var arr = new Array();
    			arr = data.split('%');
    			//alert("Data Loaded: " + arr[0] + "</br>" + arr[1] + "</br>" + arr[2]);
- 			$('.edit-maga-title').attr("value",arr[1]);
- 			$('.edit-maga-desc').html(arr[2]);
+ 			$('.edit-maga-title').attr("value",arr[2]);
+ 			$('.edit-maga-desc').html(arr[3]);
  		});
 	});
 
@@ -21,11 +21,11 @@ $(document).ready(function(){
    			var arr = new Array();
    			arr = data.split('%');
    			//alert("Data Loaded: " + arr[0] + "</br>" + arr[1] + "</br>" + arr[2]);
- 			$('.edit-book-title').attr("value",arr[1]);
- 			$('.edit-book-author').attr("value",arr[3]);
- 			$('.edit-book-publisher').attr("value",arr[4]);
- 			$('.edit-book-date').attr("value",arr[5]);
- 			$('.edit-book-desc').html(arr[2]);
+ 			$('.edit-book-title').attr("value",arr[2]);
+ 			$('.edit-book-author').attr("value",arr[5]);
+ 			$('.edit-book-publisher').attr("value",arr[6]);
+ 			$('.edit-book-date').attr("value",arr[7]);
+ 			$('.edit-book-desc').html(arr[3]);
  		});
 	});
 

@@ -4,10 +4,10 @@ class Link extends CI_Controller
 {
     public function index()
     {
-        $data['school'] = $this->show_model->showlink('school');
-        $data['country'] = $this->show_model->showlink('country');
-        $data['science'] = $this->show_model->showlink('science');
-        $data['academic'] = $this->show_model->showlink('academic',0,false);
+        $data['school'] = $this->show_model->showallrecord('link','school');
+        $data['country'] = $this->show_model->showallrecord('link','country');
+        $data['science'] = $this->show_model->showallrecord('link','science');
+        $data['academic'] = $this->show_model->showallrecord('link','academic');
         $data['jsfile'] = 'js/cms/link/linklist.js';
         $this->load->view('cms/home',$data);
         $this->load->view('cms/link/linklist');
@@ -38,9 +38,13 @@ class Link extends CI_Controller
             );
         $result = $this->edit_model->editlink($id,$data);
         if($result == true){
+            header("Content-type: text/html; charset=utf-8");
+            ob_start();
             echo "<script>alert('修改成功');</script>";
             redirect('cms/link','refresh');
         }else{
+            header("Content-type: text/html; charset=utf-8");
+            ob_start();
             echo "<script>alert('修改失败');</script>";
             redirect('cms/link','refresh');
         }
@@ -50,9 +54,13 @@ class Link extends CI_Controller
         $kind = 'link';
         $result = $this->edit_model->delete($kind,$id);
         if($result == true){
+            header("Content-type: text/html; charset=utf-8");
+            ob_start();
             echo "<script>alert('删除成功');</script>";
             redirect('cms/link','refresh');
         }else{
+            header("Content-type: text/html; charset=utf-8");
+            ob_start();
             echo "<script>alert('删除失败');</script>";
             redirect('cms/link','refresh');
         }
@@ -71,9 +79,13 @@ class Link extends CI_Controller
         $table = 'link';
         $result = $this->add_model->additem($table,$data);
         if($result == true){
+            header("Content-type: text/html; charset=utf-8");
+            ob_start();
             echo "<script>alert('成功增加一条链接');</script>";
             redirect('cms/link/add','refresh');
         }else{
+            header("Content-type: text/html; charset=utf-8");
+            ob_start();
             echo "<script>alert('增加链接失败');</script>";
             redirect('cms/link/add','refresh');
         }

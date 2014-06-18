@@ -97,7 +97,7 @@
 	background: url("../images/title2.jpg") no-repeat;
 	clear: both;
 	height: 128px;
-	width: 621px;
+	text-align: left;
 	text-indent: -999em;
 }
 /***************************nav***********************/
@@ -121,7 +121,7 @@
 	font-size: 16px;
 	font-weight: bold;
 	padding: 15px 24px;
-	_padding: 15px 21px;
+	_padding: 14px 21px;
 	text-align: left;
 }
 
@@ -293,7 +293,7 @@
 	font-size: 14px;
 	position: relative;
 	top: 252px;
-	text-align: center;
+	left: 50%;
 }
 .fenye span{
 	cursor: default;

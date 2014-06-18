@@ -46,9 +46,13 @@ class Member extends CI_Controller
             );
         $result = $this->edit_model->editmember($id,$data);
         if($result == true){
+            header("Content-type: text/html; charset=utf-8");
+            ob_start();
             echo "<script>alert('修改成功');</script>";
             redirect('cms/member','refresh');
         }else{
+            header("Content-type: text/html; charset=utf-8");
+            ob_start();
             echo "<script>alert('修改失败');</script>";
             redirect('cms/member','refresh');
         }
@@ -58,9 +62,13 @@ class Member extends CI_Controller
         $kind = 'member';
         $result = $this->edit_model->delete($kind,$id);
         if($result == true){
+            header("Content-type: text/html; charset=utf-8");
+            ob_start();
             echo "<script>alert('删除成功');</script>";
             redirect('cms/member','refresh');
         }else{
+            header("Content-type: text/html; charset=utf-8");
+            ob_start();
             echo "<script>alert('删除失败');</script>";
             redirect('cms/member','refresh');
         }
@@ -99,9 +107,13 @@ class Member extends CI_Controller
         $table = 'member';
         $result = $this->add_model->additem($table,$data);
         if($result == true){
+            header("Content-type: text/html; charset=utf-8");
+            ob_start();
             echo "<script>alert('成功增加一位成员');</script>";
             redirect('cms/member/add','refresh');
         }else{
+            header("Content-type: text/html; charset=utf-8");
+            ob_start();
             echo "<script>alert('增加成员失败');</script>";
             redirect('cms/member/add','refresh');
         }
@@ -123,7 +135,7 @@ class Member extends CI_Controller
   {
    $error = array('error' => $this->upload->display_errors());
    
-   print_r($error);
+   // print_r($error);
   } 
   else
   {

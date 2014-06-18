@@ -14,9 +14,9 @@ class Edit_model extends CI_Model{
 		}
 	}
 
-	public function editnewsbyid($title,$description,$id){
+	public function editnewsbyid($title,$content,$id){
 
-		$data = array('content' => $title , 'description' => $description);
+		$data = array('title' => $title , 'content' => $content);
 		$this->db->where('id',$id);
 		$this->db->update('news',$data);
 		if($this->db->affected_rows() == 1){

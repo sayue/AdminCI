@@ -4,8 +4,8 @@ class Project extends CI_Controller
 {
     public function index()
     {
-        $data['academic'] = $this->show_model->showproject('academic');
-        $data['practical'] = $this->show_model->showproject('practical');
+        $data['academic'] = $this->show_model->showallrecord('project','academic');
+        $data['practical'] = $this->show_model->showallrecord('project','practical');
         $data['jsfile'] = 'js/cms/project/projectlist.js';
         $this->load->view('cms/home',$data);
         $this->load->view('cms/project/projectlist');
@@ -44,9 +44,13 @@ class Project extends CI_Controller
             );
         $result = $this->edit_model->editproject($id,$data);
         if($result == true){
-            echo "<script>alert('修改成功');</script>";
+            header("Content-type: text/html; charset=utf-8");
+            ob_start();
+            echo "<script type=\"text/javascript\" charset=\"gb2312\">alert('修改成功');</script>";
             redirect('cms/project','refresh');
         }else{
+            header("Content-type: text/html; charset=utf-8");
+            ob_start();
             echo "<script>alert('修改失败');</script>";
             redirect('cms/project','refresh');
         }
@@ -56,9 +60,13 @@ class Project extends CI_Controller
         $kind = 'project';
         $result = $this->edit_model->delete($kind,$id);
         if($result == true){
+            header("Content-type: text/html; charset=utf-8");
+            ob_start();
             echo "<script>alert('删除成功');</script>";
             redirect('cms/project','refresh');
         }else{
+            header("Content-type: text/html; charset=utf-8");
+            ob_start();
             echo "<script>alert('删除失败');</script>";
             redirect('cms/project','refresh');
         }
@@ -82,9 +90,13 @@ class Project extends CI_Controller
         $table = 'project';
         $result = $this->add_model->additem($table,$data);
         if($result == true){
+            header("Content-type: text/html; charset=utf-8");
+            ob_start();
             echo "<script>alert('成功增加一个项目');</script>";
             redirect('cms/project/add','refresh');
         }else{
+            header("Content-type: text/html; charset=utf-8");
+            ob_start();
             echo "<script>alert('增加项目失败');</script>";
             redirect('cms/project/add','refresh');
         }

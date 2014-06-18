@@ -22,7 +22,7 @@ class Intro extends CI_Controller{
 			case 6 : $data['intro'] = $this->show_model->showintrobyid(6); 
 			break;
 
-			default : show_error('您无权访问该模块，该错误已经被记录！点击<a href="'. site_url('home') .'">返回</a>');
+			default : header("Content-type: text/html; charset=utf-8"); show_error('您无权访问该模块，该错误已经被记录！点击<a href="'. site_url('home') .'">返回</a>');
 		}
 		
 		$data['cssfile'] = 'css/style2.css';

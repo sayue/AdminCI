@@ -11,6 +11,7 @@ class Resource extends CI_Controller{
 			//$data = array();
 			$data = $this->show_model->showpubbyid($id);
 			if(!$data){
+                header("Content-type: text/html; charset=utf-8");
 				show_error('您无权访问该模块，该错误已经被记录！点击<a href="'. site_url('home') .'">返回</a>');
 			}
 			if($data['kind'] == 'magazine'){
@@ -46,6 +47,7 @@ class Resource extends CI_Controller{
 		$pages = ($data['num']%14 == 0)?$data['num']/14:ceil($data['num']/14);//页数
 
 		if($page > $pages || !is_numeric($page)){
+            header("Content-type: text/html; charset=utf-8");
 			show_error('您无权访问该模块，该错误已经被记录！点击<a href="'. site_url('home') .'">返回</a>');
 		}
 		
@@ -69,6 +71,7 @@ class Resource extends CI_Controller{
 		$pages = ($data['num']%14 == 0)?$data['num']/14:ceil($data['num']/14);//页数
 
 		if($page > $pages || !is_numeric($page)){
+            header("Content-type: text/html; charset=utf-8");
 			show_error('您无权访问该模块，该错误已经被记录！点击<a href="'. site_url('home') .'">返回</a>');
 		}
 

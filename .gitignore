@@ -11,3 +11,4 @@ application/logs/*
 
 images/
 picture/
+config.yaml

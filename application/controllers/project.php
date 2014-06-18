@@ -11,6 +11,7 @@ class Project extends CI_Controller{
 		if($id != false){
 			$data['project'] = $this->show_model->showprojectbyid($id);
 			if($data['project'] == ''){
+                header("Content-type: text/html; charset=utf-8");
 				show_error('您无权访问该模块，该错误已经被记录！点击<a href="'. site_url('home') .'">返回</a>');
 			}
 			$this->load->view('project/each',$data);
@@ -29,6 +30,7 @@ class Project extends CI_Controller{
 		$pages = ($data['num']%14 == 0)?$data['num']/14:ceil($data['num']/14);//页数
 
 		if($page > $pages || !is_numeric($page)){
+            header("Content-type: text/html; charset=utf-8");
 			show_error('您无权访问该模块，该错误已经被记录！点击<a href="'. site_url('home') .'">返回</a>');
 		}
 
@@ -51,6 +53,7 @@ class Project extends CI_Controller{
 		$pages = ($data['num']%14 == 0)?$data['num']/14:ceil($data['num']/14);//页数
 		
 		if($page > $pages || !is_numeric($page)){
+            header("Content-type: text/html; charset=utf-8");
 			show_error('您无权访问该模块，该错误已经被记录！点击<a href="'. site_url('home') .'">返回</a>');
 		}
 

@@ -59,7 +59,8 @@
 					<li class="subnav"><a href="<?php echo site_url('resource'); ?>">学术资源</a>
 						<ul>
 							<li><a href="<?php echo site_url('resource/doc'); ?>">文献收藏</a></li>
-							<li><a href="<?php echo site_url('resource'); ?>">出版品</a></li>
+							<li><a href="<?php echo site_url('resource/magazine'); ?>">杂志</a></li>
+                            					<li><a href="<?php echo site_url('resource/book'); ?>">书籍</a></li>
 						</ul>
 					</li>
 					<li class="subnav"><a href="<?php echo site_url('link'); ?>">友情链接</a>

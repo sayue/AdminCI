@@ -4,9 +4,9 @@ class News extends CI_Controller
 {
     public function index()
     {
-        $data['meeting'] = $this->show_model->shownews('meeting');
-        $data['visit'] = $this->show_model->shownews('visit');
-        $data['prize'] = $this->show_model->shownews('prize');
+        $data['meeting'] = $this->show_model->showallrecord('news','meeting');
+        $data['visit'] = $this->show_model->showallrecord('news','visit');
+        $data['prize'] = $this->show_model->showallrecord('news','prize');
         $data['jsfile'] = 'js/cms/news/newslist.js';
         $this->load->view('cms/home',$data);
         $this->load->view('cms/news/newslist');
@@ -31,14 +31,19 @@ class News extends CI_Controller
 
     public function edit(){
         $title = $this->input->post('edit-title',TRUE);
-        $description = $this->input->post('edit-desc',TRUE);
+        $content = $this->input->post('edit-desc',TRUE);
         $id = $this->input->post('newsid',TRUE);
         // echo $content.$id;
-        $result = $this->edit_model->editnewsbyid($title,$description,$id);
+        $result = $this->edit_model->editnewsbyid($title,$content,$id);
         if($result == true){
+            
+            header("Content-type: text/html; charset=utf-8");
+            ob_start();
             echo "<script>alert('修改成功');</script>";
             redirect('cms/news','refresh');
         }else{
+            header("Content-type: text/html; charset=utf-8");
+            ob_start();
             echo "<script>alert('修改失败');</script>";
             redirect('cms/news','refresh');
         }
@@ -48,9 +53,13 @@ class News extends CI_Controller
         $kind = 'news';
         $result = $this->edit_model->delete($kind,$id);
         if($result == true){
+            header("Content-type: text/html; charset=utf-8");
+            ob_start();
             echo "<script>alert('删除成功');</script>";
             redirect('cms/news','refresh');
         }else{
+            header("Content-type: text/html; charset=utf-8");
+            ob_start();
             echo "<script>alert('删除失败');</script>";
             redirect('cms/news','refresh');
         }
@@ -74,9 +83,13 @@ class News extends CI_Controller
         $table = 'news';
         $result = $this->add_model->additem($table,$data);
         if($result == true){
+            header("Content-type: text/html; charset=utf-8");
+            ob_start();
             echo "<script>alert('成功增加一条动态');</script>";
             redirect('cms/news/add','refresh');
         }else{
+            header("Content-type: text/html; charset=utf-8");
+            ob_start();
             echo "<script>alert('增加动态失败');</script>";
             redirect('cms/news/add','refresh');
         }

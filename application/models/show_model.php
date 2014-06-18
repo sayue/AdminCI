@@ -29,11 +29,12 @@ class Show_model extends CI_Model{
 	public function shownews($kind,$start = 0,$limit = false){
 		if($limit != false){
 			$this->db->limit($limit);
-		}else if($start != 0){
+		}else if($start != 0 && $limit == false){
 			$this->db->limit(14,$start);
-		}else if($start == 0){
+		}else if($start == 0 && $limit == false){
 			$this->db->limit(14,0);
 		}
+        $this->db->order_by('id','desc');
 		$query = $this->db->get_where('news',array('kind' => $kind));
 		if($query->num_rows() > 0){
 			return $query->result_array();
@@ -51,14 +52,18 @@ class Show_model extends CI_Model{
 		}
 	}
 
+	//学术动态分页
 	public function showmagabook($kind,$start = 0,$limit = false){
-		if($limit != false){
+		if($limit != false){//列表页面，每个子栏目显示有条目限制
 			$this->db->limit($limit);
-		}else if($start != 0){
+		}else if($start != 0 && $limit == false){
 			$this->db->limit(14,$start);
-		}else if($start == 0){
+		}else if($start == 0 && $limit == false){
 			$this->db->limit(14,0);
+		}else if($start == 0 && $limit == 'n'){
+
 		}
+        $this->db->order_by('id','desc');
 		$query = $this->db->get_where('resource',array('kind' => $kind));
 		if($query->num_rows() > 0){
 			return $query->result_array();
@@ -66,15 +71,16 @@ class Show_model extends CI_Model{
 			return false;
 		}
 	}
-
+	//项目研究分页
 	public function showproject($kind,$start = 0,$limit = false){
 		if($limit != false){
 			$this->db->limit($limit);
-		}else if($start != 0){
+		}else if($start != 0 && $limit == false){
 			$this->db->limit(14,$start);
-		}else if($start == 0){
+		}else if($start == 0 && $limit == false){
 			$this->db->limit(14,0);
 		}
+        $this->db->order_by('id','desc');
 		$query = $this->db->get_where('project',array('kind' => $kind));
 		if($query->num_rows() > 0){
 			return $query->result_array();
@@ -87,6 +93,7 @@ class Show_model extends CI_Model{
 		if($id != false){
 			$query = $this->db->get_where('member',array('id' => $id));
 		}else{
+            $this->db->order_by('id','desc');
 			$query = $this->db->get('member');
 		}
 		
@@ -96,16 +103,17 @@ class Show_model extends CI_Model{
 			return false;
 		}
 	}
-
+	//友情链接分页
 	public function showlink($kind,$start = 0,$limit = false){
 		if($limit != false){
 			$this->db->limit($limit);
 		}
-		else if($start != 0 && $start != false){
-			$this->db->limit(2,$start);
-		}else if($start == 0 && $start != false){
-			$this->db->limit(2,0);
+		else if($start != 0 && $limit == false){
+			$this->db->limit(14,$start);
+		}else if($start == 0 && $limit == false){
+			$this->db->limit(14,0);
 		}
+        $this->db->order_by('id','desc');
 		$query = $this->db->get_where('link',array('kind' => $kind));
 		if($query->num_rows() > 0){
 			return $query->result_array();
@@ -280,6 +288,16 @@ class Show_model extends CI_Model{
 		if($query->num_rows() > 0){
 		 	$row = $query->row();
 		 	return $row->id;
+		}
+	}
+
+	public function showallrecord($table,$kind){
+        $this->db->order_by('id','desc');
+		$query = $this->db->get_where($table,array('kind' => $kind));
+		if($query->num_rows() > 0){
+			return $query->result_array();
+		}else{
+			return false;
 		}
 	}
 }

@@ -11,6 +11,7 @@ class Member extends CI_Controller{
 		if($id !== false){
 			$data['personal'] = $this->show_model->showmember($id);
 			if($data['personal'] == ''){
+                header("Content-type: text/html; charset=utf-8");
 				show_error('您无权访问该模块，该错误已经被记录！点击<a href="'. site_url('home') .'">返回</a>');
 			}
 			//print_r($data['personal']);
@@ -29,6 +30,7 @@ class Member extends CI_Controller{
 		$pages = ($data['num']%4 == 0)?$data['num']/4:ceil($data['num']/4);//页数
 		
 		if($page > $pages || !is_numeric($page)){
+            header("Content-type: text/html; charset=utf-8");
 			show_error('您无权访问该模块，该错误已经被记录！点击<a href="'. site_url('home') .'">返回</a>');
 		}
 
@@ -50,6 +52,8 @@ class Member extends CI_Controller{
 		$pages = ($data['num']%8 == 0)?$data['num']/8:ceil($data['num']/8);//页数
 
 		if($page > $pages || !is_numeric($page)){
+            header("Content-type: text/html; charset=utf-8");
+            ob_start();
 			show_error('您无权访问该模块，该错误已经被记录！点击<a href="'. site_url('home') .'">返回</a>');
 		}
 
@@ -71,6 +75,7 @@ class Member extends CI_Controller{
 		$pages = ($data['num']%8 == 0)?$data['num']/8:ceil($data['num']/8);//页数
 
 		if($page > $pages || !is_numeric($page)){
+            header("Content-type: text/html; charset=utf-8");
 			show_error('您无权访问该模块，该错误已经被记录！点击<a href="'. site_url('home') .'">返回</a>');
 		}
 
@@ -92,6 +97,7 @@ class Member extends CI_Controller{
 		$pages = ($data['num']%4 == 0)?$data['num']/4:ceil($data['num']/4);//页数
 
 		if($page > $pages || !is_numeric($page)){
+            header("Content-type: text/html; charset=utf-8");
 			show_error('您无权访问该模块，该错误已经被记录！点击<a href="'. site_url('home') .'">返回</a>');
 		}
 

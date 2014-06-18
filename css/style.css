@@ -15,7 +15,9 @@ body{
 	background: url('../images/header_bg1.jpg') no-repeat;
 	padding:15px 93px 0 117px;
 	height: 267px;
+    *height: 267px;
 	min-width: 1028px;
+    overflow: hidden;
 
 }
 .header_top{
@@ -96,8 +98,8 @@ body{
 	background: url("../images/title.jpg") no-repeat;
 	clear: both;
 	height: 128px;
-	width: 621px;
 	text-indent: -999em;
+    text-align: left;
 }
 /***************************nav***********************/
 .nav{
@@ -119,6 +121,7 @@ body{
 	font-size: 16px;
 	font-weight: bold;
 	padding: 15px 24px;
+    _padding: 14px 21px;
 	text-align: left;
 }
 
@@ -129,8 +132,8 @@ body{
 }
 .subnav ul{
 	background-color: #fff;
-	filter:Alpha(opacity=60); 
-	opacity:0.6;
+	filter:Alpha(opacity=80); 
+	opacity:0.8;
 	position: absolute;
 	display: none;
 	_width:200px;
@@ -175,7 +178,7 @@ body{
 	font-weight: bold;
 }
 .top_content p a,.bottom_content p a{
-	margin-left: 200px;
+	margin-left: 400px;
 	font-size: 14px;
 }
 .content a{

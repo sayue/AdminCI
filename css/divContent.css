@@ -53,6 +53,7 @@
 	color: #000;
 	font-size: 14px;
 	padding: 5px 0;
+    margin-left: 5px;
 }
 .txt_list a:hover{
 	color: #017e3c;
@@ -110,7 +111,7 @@
 	position: absolute;
 	/*top: 370px;*/
 	top: 912px;
-	left: 658px;
+	left: 50%;
 	text-align: center;
 }
 .fenye span{
@@ -154,5 +155,5 @@
 	cursor: default;
 	text-align: center;
 	padding: 5px;
-	width: 
+	border: 1px solid #000;
 }

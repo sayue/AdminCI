@@ -33,9 +33,13 @@ class Admin extends CI_Controller
         $newpwd = $this->input->post('newpwd',TRUE);
         $result = $this->admin_model->editpwd($newpwd);
         if($result == true){
+            header("Content-type: text/html; charset=utf-8");
+            ob_start();
             echo "<script>alert('修改成功');</script>";
             redirect('cms/admin','refresh');
         }else{
+            header("Content-type: text/html; charset=utf-8");
+            ob_start();
             echo "<script>alert('修改失败');</script>";
             redirect('cms/admin','refresh');
         }
@@ -62,9 +66,13 @@ class Admin extends CI_Controller
             );
         $result = $this->admin_model->addadmins($data);
         if($result == true){
+            header("Content-type: text/html; charset=utf-8");
+            ob_start();
             echo "<script>alert('成功增加管理员');</script>";
             redirect('cms/admin/add','refresh');
         }else{
+            header("Content-type: text/html; charset=utf-8");
+            ob_start();
             echo "<script>alert('增加管理员失败');</script>";
             redirect('cms/admin/add','refresh');
         }

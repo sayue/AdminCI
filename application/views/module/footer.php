@@ -1,8 +1,8 @@
 <div class="footer">
 			<p>
-				<a href="">设为首页</a>
-				<a href="">加入收藏夹</a>
-				<a href="">网站地图</a>
+				<a href="javascript:void(0);" onclick="show_index(window.location);">设为首页</a>
+				<a href="javascript:void(0);" onclick="show_Favorite(window.location,document.title);">加入收藏夹</a>
+				<!--<a href="">网站地图</a>-->
 			</p>
 			<p>
 				<span>版权所有©移民与族群研究中心</span>

@@ -57,8 +57,8 @@
 					</li>
 					<li class="subnav"><a href="<?php echo site_url('project'); ?>">研究项目</a>
 						<ul>
-							<li><a href="<?php echo site_url('project/academic'); ?>">学术研究</a></li>
-							<li><a href="<?php echo site_url('project/practical'); ?>">应用研究</a></li>
+							<li><a href="<?php echo site_url('project/academic'); ?>">学术项目</a></li>
+							<li><a href="<?php echo site_url('project/practical'); ?>">应用项目</a></li>
 						</ul>
 					</li>
 					<li class="subnav"><a href="<?php echo site_url('news'); ?>">学术动态</a>
@@ -71,15 +71,16 @@
 					<li class="subnav"><a href="<?php echo site_url('resource'); ?>">学术资源</a>
 						<ul>
 							<li><a href="<?php echo site_url('resource/doc'); ?>">文献收藏</a></li>
-							<li><a href="<?php echo site_url('resource'); ?>">出版品</a></li>
+							<li><a href="<?php echo site_url('resource/magazine'); ?>">杂志</a></li>
+                            					<li><a href="<?php echo site_url('resource/book'); ?>">书籍</a></li>
 						</ul>
 					</li>
 					<li class="subnav"><a href="<?php echo site_url('link'); ?>">友情链接</a>
 						<ul>
-							<li><a href="<?php echo site_url('link/lists/1'); ?>">校内机构</a></li>
-							<li><a href="<?php echo site_url('link/lists/2'); ?>">国家机构</a></li>
-							<li><a href="<?php echo site_url('link/lists/3'); ?>">教学科研机构</a></li>
-							<li><a href="<?php echo site_url('link/lists/4'); ?>">学术网站</a></li>
+							<li><a href="<?php echo site_url('link/school'); ?>">校内机构</a></li>
+							<li><a href="<?php echo site_url('link/country'); ?>">国家机构</a></li>
+							<li><a href="<?php echo site_url('link/science'); ?>">教学科研机构</a></li>
+							<li><a href="<?php echo site_url('link/academic'); ?>">学术网站</a></li>
 						</ul>
 					</li>
 				</ul>
@@ -114,18 +115,18 @@
 		</div><!--end content-->
 		<div class="footer">
 			<p>
-				<a href="">设为首页</a>
-				<a href="">加入收藏夹</a>
-				<a href="">网站地图</a>
+				<a href="javascript:void(0);" onclick="show_index(window.location);">设为首页</a>
+				<a href="javascript:void(0);" onclick="show_Favorite(window.location,document.title);">加入收藏夹</a>
+				<!--<a href="">网站地图</a>-->
 			</p>
 			<p>
 				<span>版权所有©移民与族群研究中心</span>
-				<span>电话：（86）20-84114831</span>
-				<span>传真：（86）20-84112122</span>
+				<span>电话：（86）020-84114275</span>
+				<span>传真：（86）020-84114286</span>
 			</p>
 			<p>
-				<span>电子邮箱：hshac@mail.sysu.edu.cn</span>
-				<span>地址：广州市海珠区新港西路135号中山大学东北区317栋 （邮编：510275 ）</span>
+				<span>电子邮箱：hsdamz@mail.sysu.edu.cn</span>
+				<span>地址：广州市海珠区新港西路135号中山大学东北区334号人类学系马丁堂 （邮编：510275 ）</span>
 			</p>
 		</div><!--end footer-->
 	</div>

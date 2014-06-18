@@ -100,10 +100,10 @@
                             <label>个人简介</label>
                             <textarea class="form-control edit-mem-intro" name="edit-mem-intro" rows="10"></textarea>
                             </div>
-                            <div class="form-group">
+                            <!-- <div class="form-group">
                                 <label>个人照片上传（可选）</label>
                                 <input type="file">
-                            </div>
+                            </div> -->
                             
                         </div>
                         <div class="modal-footer">

@@ -147,10 +147,10 @@
                             <label>书本简介</label>
                             <textarea class="form-control edit-book-desc" name="edit-book-desc" rows="10"></textarea>
                             </div>
-                            <div class="form-group">
+                            <!-- <div class="form-group">
                                 <label>书本图片上传</label>
                                 <input type="file">
-                            </div>
+                            </div> -->
                             
                         </div>
                         <div class="modal-footer">

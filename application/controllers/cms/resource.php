@@ -12,8 +12,8 @@ class Resource extends CI_Controller
 
     public function lists()
     {
-        $data['magazine'] = $this->show_model->showmagabook('magazine');
-        $data['book'] = $this->show_model->showmagabook('book');
+        $data['magazine'] = $this->show_model->showallrecord('resource','magazine');
+        $data['book'] = $this->show_model->showallrecord('resource','book');
         $data['jsfile'] = 'js/cms/resource/publication.js';
         $this->load->view('cms/home',$data);
         $this->load->view('cms/resource/publication');
@@ -54,9 +54,13 @@ class Resource extends CI_Controller
             );
         $result = $this->edit_model->editdoccount($data);
         if($result == true){
+            header("Content-type: text/html; charset=utf-8");
+            ob_start();
             echo "<script>alert('修改成功');</script>";
             redirect('cms/resource','refresh');
         }else{
+            header("Content-type: text/html; charset=utf-8");
+            ob_start();
             echo "<script>alert('修改失败');</script>";
             redirect('cms/resource','refresh');
         }
@@ -71,9 +75,13 @@ class Resource extends CI_Controller
             $data = array('title' => $title , 'intro' => $intro);
             $result = $this->edit_model->editresource('magazine',$id,$data);
             if($result == true){
+                header("Content-type: text/html; charset=utf-8");
+                ob_start();
                 echo "<script>alert('修改成功');</script>";
                 redirect('cms/resource/lists','refresh');
             }else{
+                header("Content-type: text/html; charset=utf-8");
+                ob_start();
                 echo "<script>alert('修改失败');</script>";
                 redirect('cms/resource/lists','refresh');
             }
@@ -95,9 +103,13 @@ class Resource extends CI_Controller
                 );
             $result = $this->edit_model->editresource('book',$id,$data);
             if($result == true){
+                header("Content-type: text/html; charset=utf-8");
+                ob_start();
                 echo "<script>alert('修改成功');</script>";
                 redirect('cms/resource/lists','refresh');
             }else{
+                header("Content-type: text/html; charset=utf-8");
+                ob_start();
                 echo "<script>alert('修改失败');</script>";
                 redirect('cms/resource/lists','refresh');
             }
@@ -108,9 +120,13 @@ class Resource extends CI_Controller
         $kind = 'resource';
         $result = $this->edit_model->delete($kind,$id);
         if($result == true){
+            header("Content-type: text/html; charset=utf-8");
+            ob_start();
             echo "<script>alert('删除成功');</script>";
             redirect('cms/resource/lists','refresh');
         }else{
+            header("Content-type: text/html; charset=utf-8");
+            ob_start();
             echo "<script>alert('删除失败');</script>";
             redirect('cms/resource/lists','refresh');
         }
@@ -152,9 +168,13 @@ class Resource extends CI_Controller
         $table = 'resource';
         $result = $this->add_model->additem($table,$data);
         if($result == true){
+            header("Content-type: text/html; charset=utf-8");
+            ob_start();
             echo "<script>alert('成功增加一本读物');</script>";
             redirect('cms/resource/add','refresh');
         }else{
+            header("Content-type: text/html; charset=utf-8");
+            ob_start();
             echo "<script>alert('增加读物失败');</script>";
             redirect('cms/resource/add','refresh');
         }
@@ -181,7 +201,7 @@ class Resource extends CI_Controller
   {
    $error = array('error' => $this->upload->display_errors());
    
-   print_r($error);
+   // print_r($error);
   } 
   else
   {

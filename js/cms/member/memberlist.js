@@ -14,7 +14,7 @@ $(document).ready(function(){
  			$('.edit-mem-field').attr("value",arr[4]);
  			$('.edit-mem-department').attr("value",arr[5]);
  			$('.edit-mem-institution').attr("value",arr[6]);
- 			$('.edit-mem-intro').html(arr[7]);
+ 			$('.edit-mem-intro').html(arr[8]);
  		});
 	});
 
