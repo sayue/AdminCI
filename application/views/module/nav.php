@@ -7,8 +7,8 @@
 				</div>
 				<div class="search">
 					<span></span>
-					<form action="#">
-						<input type="text" value="&nbsp;搜索|" class="input_text"  onfocus="if(this.value=='&nbsp;搜索|'){this.value=''}" onblur="if(this.value==''){this.value='&nbsp;搜索|'}"/>
+					<form name="query" action="http://www.baidu.com/baidu" method="get" target="_blank">
+						<input type="text" name="word" value="&nbsp;搜索|" class="input_text"  onfocus="if(this.value=='&nbsp;搜索|'){this.value=''}" onblur="if(this.value==''){this.value='&nbsp;搜索|'}"/>
 						<input type="submit" value="搜索" class="btn" />
 					</form>
 					<div class="banben">
