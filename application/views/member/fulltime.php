@@ -35,7 +35,7 @@
 					<tr>
 						<td><?php echo $num++; ?></td>
 						<td><?php echo $item['field']; ?></td>
-						<td><?php echo $item['name']; ?></td>
+						<td><a href="<?php echo site_url('member/index/').'/'.$item['id'] ; ?>"><?php echo $item['name']; ?></a></td>
 						<td><?php echo $item['birth']; ?></td>
 						<td><?php echo $item['degree']; ?></td>
 						<td><?php echo $item['position']; ?></td>
