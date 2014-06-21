@@ -13,9 +13,10 @@
 			<div class="content_main">
 				<div class="breadCrumbNav">
 					<span>当前位置：</span>
-					<a href="">首页></a>
-					<a href="">组织架构及人员构成></a>
-					<a href="">中心负责人</a>
+					<a href="<?php echo site_url('home');?>">首页></a>
+					<a href="<?php echo site_url('member'); ?>">组织架构及人员构成></a>
+					<?php if($item['charge'] == 'center'){$kindname = "中心负责人"; $kind = 'center';}else if($item['kind'] == "fulltime"){$kindname = "专职研究员"; $kind = 'fulltime';}?>
+					<a href="<?php echo site_url('member/')."/".$kind;?>"><?php if(isset($kindname)){echo $kindname;}?></a>
 				</div>
 				<div class="intro">
 					<p><?php echo $item['intro'];?></p>
