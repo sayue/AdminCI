@@ -16,8 +16,8 @@ class Project extends CI_Controller{
 			}
 			$this->load->view('project/each',$data);
 		}else{
-			$data['academic'] = $this->show_model->showproject('academic',false,5);
-			$data['practical'] = $this->show_model->showproject('practical',false,5);
+			$data['academic'] = $this->show_model->showproject('academic',false,5,'orderdate');
+			$data['practical'] = $this->show_model->showproject('practical',false,5,'orderdate');
 			$this->load->view('project/list',$data);
 		}
 		

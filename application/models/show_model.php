@@ -26,7 +26,7 @@ class Show_model extends CI_Model{
 		}
 	}
 
-	public function shownews($kind,$start = 0,$limit = false){
+	public function shownews($kind,$start = 0,$limit = false,$order = 'id'){
 		if($limit != false){
 			$this->db->limit($limit);
 		}else if($start != 0 && $limit == false){
@@ -34,7 +34,7 @@ class Show_model extends CI_Model{
 		}else if($start == 0 && $limit == false){
 			$this->db->limit(14,0);
 		}
-        $this->db->order_by('id','desc');
+        		$this->db->order_by($order,'desc');
 		$query = $this->db->get_where('news',array('kind' => $kind));
 		if($query->num_rows() > 0){
 			return $query->result_array();
@@ -72,7 +72,7 @@ class Show_model extends CI_Model{
 		}
 	}
 	//项目研究分页
-	public function showproject($kind,$start = 0,$limit = false){
+	public function showproject($kind,$start = 0,$limit = false,$order = 'id'){
 		if($limit != false){
 			$this->db->limit($limit);
 		}else if($start != 0 && $limit == false){
@@ -80,7 +80,7 @@ class Show_model extends CI_Model{
 		}else if($start == 0 && $limit == false){
 			$this->db->limit(14,0);
 		}
-        $this->db->order_by('id','desc');
+        		$this->db->order_by($order,'desc');
 		$query = $this->db->get_where('project',array('kind' => $kind));
 		if($query->num_rows() > 0){
 			return $query->result_array();
@@ -209,7 +209,7 @@ class Show_model extends CI_Model{
 	//首页学术动态显示，按时间先后排序
 	public function home_shownews(){
 		$this->db->limit(5,0);
-		$this->db->order_by('editime','desc');
+		$this->db->order_by('orderdate','desc');
 		$query = $this->db->get('news');
 
 		if($query->num_rows() > 0){
@@ -221,7 +221,7 @@ class Show_model extends CI_Model{
 
 	//首页公告
 	public function home_notice(){
-		$sql = "select id,kind,title,date,editime from news union select id,kind,title,date,editime from project order by editime desc limit 5";
+		$sql = "select id,kind,title,date,orderdate,editime from news union select id,kind,title,date,orderdate,editime from project order by orderdate desc limit 5";
 		$query = $this->db->query($sql);
 		if($query->num_rows() > 0){
 			return $query->result_array();
@@ -292,7 +292,7 @@ class Show_model extends CI_Model{
 	}
 
 	public function showallrecord($table,$kind){
-        $this->db->order_by('id','desc');
+        		$this->db->order_by('id','desc');
 		$query = $this->db->get_where($table,array('kind' => $kind));
 		if($query->num_rows() > 0){
 			return $query->result_array();

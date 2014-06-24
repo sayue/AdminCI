@@ -15,9 +15,9 @@ class News extends CI_Controller{
 			}
 			$this->load->view('news/each',$data);
 		}else{
-			$data['meeting'] = $this->show_model->shownews('meeting',false,3);
-			$data['visit'] = $this->show_model->shownews('visit',false,3);
-			$data['prize'] = $this->show_model->shownews('prize',false,3);
+			$data['meeting'] = $this->show_model->shownews('meeting',false,3,'orderdate');
+			$data['visit'] = $this->show_model->shownews('visit',false,3,'orderdate');
+			$data['prize'] = $this->show_model->shownews('prize',false,3,'orderdate');
 			$this->load->view('news/list',$data);
 		}
 		
