@@ -39,7 +39,7 @@ class News extends CI_Controller{
 		$data['pagenow'] = $page;
 		$start = ($page-1)*14;
 
-		$data['meeting'] = $this->show_model->shownews('meeting',$start);
+		$data['meeting'] = $this->show_model->shownews('meeting',$start,false,'orderdate');
 		$data['cssfile'] = 'css/style2.css';
 		$this->load->view('module/header',$data);
 		$this->load->view('module/nav');
@@ -62,7 +62,7 @@ class News extends CI_Controller{
 		$data['pagenow'] = $page;
 		$start = ($page-1)*14;
 
-		$data['visit'] = $this->show_model->shownews('visit',$start);
+		$data['visit'] = $this->show_model->shownews('visit',$start,false,'orderdate');
 		$data['cssfile'] = 'css/style2.css';
 		$this->load->view('module/header',$data);
 		$this->load->view('module/nav');
@@ -85,7 +85,7 @@ class News extends CI_Controller{
 		$data['pagenow'] = $page;
 		$start = ($page-1)*14;
 
-		$data['prize'] = $this->show_model->shownews('prize',$start);
+		$data['prize'] = $this->show_model->shownews('prize',$start,false,'orderdate');
 		$data['cssfile'] = 'css/style2.css';
 		$this->load->view('module/header',$data);
 		$this->load->view('module/nav');

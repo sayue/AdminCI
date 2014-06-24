@@ -38,7 +38,7 @@ class Project extends CI_Controller{
 		$data['pagenow'] = $page;
 		$start = ($page-1)*14;
 
-		$data['academic'] = $this->show_model->showproject('academic',$start);
+		$data['academic'] = $this->show_model->showproject('academic',$start,false,'orderdate');
 		//$data['practical'] = $this->show_model->showproject('practical',5);
 		$data['cssfile'] = 'css/style2.css';
 		$this->load->view('module/header',$data);
@@ -62,7 +62,7 @@ class Project extends CI_Controller{
 		$data['pagenow'] = $page;
 		$start = ($page-1)*14;
 
-		$data['practical'] = $this->show_model->showproject('practical',$start);
+		$data['practical'] = $this->show_model->showproject('practical',$start,false,'orderdate');
 		//$data['practical'] = $this->show_model->showproject('practical',5);
 		$data['cssfile'] = 'css/style2.css';
 		$this->load->view('module/header',$data);
