@@ -1,5 +1,6 @@
 .DS_Store
 
+application/config/database.php
 application/cache/*
 !application/cache/index.html
 !application/cache/.htaccess
@@ -12,4 +13,3 @@ application/logs/*
 images/
 picture/
 config.yaml
-application/config/database.php

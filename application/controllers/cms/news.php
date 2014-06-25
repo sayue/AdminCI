@@ -68,9 +68,17 @@ class News extends CI_Controller
     public function addnews(){
         $title = $this->input->post('add-news-title',TRUE);
         $author = $this->input->post('add-news-author',TRUE);
-        $date = $this->input->post('add-news-date',TRUE);
+        //$date = $this->input->post('add-news-date',TRUE);
         $content = $this->input->post('add-news-content',TRUE);
         $description = $this->input->post('add-news-desc',TRUE);
+
+        $year = $this->input->post('YYYY',TRUE);
+        $month = $this->input->post('MM',TRUE);
+        $day = $this->input->post('DD',TRUE);
+        
+        $date = "$year-$month-$day";
+        //echo "$year-$month-$day";
+
         $kind = $this->input->post('kind',TRUE);
         $data = array(
             'title' => $title,
@@ -78,7 +86,8 @@ class News extends CI_Controller
             'description' => $description,
             'author' => $author,
             'kind' => $kind,
-            'date' => $date
+            'date' => $date,
+            'orderdate' => $date
             );
         $table = 'news';
         $result = $this->add_model->additem($table,$data);

@@ -77,7 +77,14 @@ class Project extends CI_Controller
         $sub = $this->input->post('add-project-sub',TRUE);
         $intro = $this->input->post('add-project-intro',TRUE);
         $author = $this->input->post('add-project-author',TRUE);
-        $date = $this->input->post('add-project-date',TRUE);
+        //$date = $this->input->post('add-project-date',TRUE);
+
+        $year = $this->input->post('YYYY',TRUE);
+        $month = $this->input->post('MM',TRUE);
+        $day = $this->input->post('DD',TRUE);
+
+        $date = "$year-$month-$day";
+
         $kind = $this->input->post('kind',TRUE);
         $data = array(
             'kind' => $kind,
@@ -85,7 +92,8 @@ class Project extends CI_Controller
             'sub' => $sub,
             'intro' => $intro,
             'author' => $author,
-            'date' => $date
+            'date' => $date,
+            'orderdate' => $date
             );
         $table = 'project';
         $result = $this->add_model->additem($table,$data);

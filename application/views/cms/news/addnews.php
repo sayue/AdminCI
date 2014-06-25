@@ -4,6 +4,11 @@
     	margin-left: 925px;
     }
 
+    .selectnews{
+        display: inline;
+        width:100px;
+    }
+
     </style>
     <div id="page-wrapper">
         <div class="row">
@@ -22,7 +27,7 @@
                             </label>                                    
                    </div>
                 <div class="panel panel-default">
-                    <form action="<?php echo site_url('cms/news/addnews'); ?>" method="post">
+                    <form action="<?php echo site_url('cms/news/addnews'); ?>" method="post" name="formnews">
                     <div class="panel-heading">
                       
                     </div>
@@ -34,7 +39,19 @@
                             <label>author/参与者</label>
                             <input class="form-control edit-title" name="add-news-author" value="" style="width:400px">
                             <label>date/日期</label>
-                            <input class="form-control edit-title" name="add-news-date" value="" style="width:400px">
+                            <br/>
+                            <!-- <input class="form-control edit-title" name="add-news-date" value="" style="width:400px"> -->
+                            
+                            <select name="YYYY" onchange="YYYYMM(this.value)" class="form-control selectnews">
+                                    <option value="">年</option>
+                            </select>
+                            <select name="MM" onchange="MMDD(this.value)" class="form-control selectnews">
+                                    <option value="">月</option>
+                            </select>
+                            <select name="DD" class="form-control selectnews">
+                                    <option value="">日</option>
+                            </select>
+                            <br/>
                             <label>Content/内容</label>
                             <textarea class="form-control" name="add-news-content" rows="3"></textarea>
                             <input type="text" name="kind" value="meeting" hidden>

@@ -10,6 +10,11 @@
       margin-right: 20px;
     }
 
+       .selectnews{
+        display: inline;
+        width:100px;
+    }
+
     </style>
 
 <div id="page-wrapper">
@@ -30,7 +35,7 @@
                       项目
                     </div>
                   	<div class="panel-body" id="addMagazine">
-                  	   <form action="<?php echo site_url('cms/project/addproject'); ?>" method="post">
+                  	   <form action="<?php echo site_url('cms/project/addproject'); ?>" method="post" name="formnews">
                   		<div class="form-group">
                             <label>title/项目名</label>
                                 <input class="form-control" name="add-project-title" style="width:400px;"> 
@@ -45,7 +50,20 @@
                             </div>
                             <div class="form-group">
                             <label>date/日期</label>
-                                <input class="form-control" name="add-project-date" style="width:400px;"> 
+                              <br/>
+                            <!-- <input class="form-control edit-title" name="add-news-date" value="" style="width:400px"> -->
+                            
+                            <select name="YYYY" onchange="YYYYMM(this.value)" class="form-control selectnews">
+                                    <option value="">年</option>
+                            </select>
+                            <select name="MM" onchange="MMDD(this.value)" class="form-control selectnews">
+                                    <option value="">月</option>
+                            </select>
+                            <select name="DD" class="form-control selectnews">
+                                    <option value="">日</option>
+                            </select>
+                            <br/>
+
                             </div>
                                 <label>intro/项目简介（若无简介可不填）</label>
                             <div class="form-group">
