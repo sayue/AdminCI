@@ -6,7 +6,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>AdminCI Management System</title>
+    <title>移民与族群研究中心--后台管理</title>
 
     <!-- Core CSS - Include with every page -->
     <link href="<?php echo base_url('css/cms/bootstrap.css'); ?>" rel="stylesheet">
