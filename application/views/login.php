@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+    <!DOCTYPE html>
 <html>
 
 <head>
@@ -39,11 +39,12 @@
                                 </div>
                                 <div class="checkbox">
                                     <label>
-                                        <input name="remember" type="checkbox" value="rememberme">Remember Me
+                                        <input name="remember" type="checkbox" value="rememberme">Remember Me（30 seconds）
                                     </label>
                                 </div>
                                 <div>
                                     <button type="submit" class="btn btn-lg btn-success btn-block">Login</button>
+                                    <button type="reset" class="btn btn-lg btn-success btn-block"><a href="">Forgeten</a></button>
                                 </div>
                                 <!-- Change this to a button or input when using this as a form -->
                                 

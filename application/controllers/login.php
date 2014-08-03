@@ -4,19 +4,18 @@ class login extends CI_Controller
 {
     public function index()
     {
-		if(!$this->is_logged_in()) {
-			$this->validToken();	
-            //$this->load->view('login');
-		} else {
-            redirect('home');
-        }
+              if(!$this->is_logged_in()) {
+                $this->load->view('login');
+	       } else {
+                        redirect('home');
+              }
     }
 
     public function validate()
     {
         $email = $this->input->post('email',TRUE);
         $pwd   = $this->input->post('password',TRUE);
-		$remember = $this->input->post('remember',TRUE);//remember me
+        $remember = $this->input->post('remember',TRUE);//remember me
 		
         $result = $this->admin_model->valid_admin($email,$pwd);
         if ($result == TRUE) {
@@ -50,53 +49,52 @@ class login extends CI_Controller
 
     private function is_logged_in()
     {
+        $token = $this->input->cookie('autologin',TRUE);
+        //echo $token;
+        $result = $this->admin_model->check_cookie($token);
+        if($result == TRUE){
+            //若数据库存在token，且expire还没过期，则构造一个已登录的session
+            $email = $this->admin_model->get_email($token);
+             $data = array(
+                'email' => $email,
+                'is_logged_in' => TRUE
+            );
+            $this->session->set_userdata($data);
+        }
+       
         return $this->session->userdata('is_logged_in');
     }
 
     public function logout()
     {
-        if (!$this->is_logged_in()) {
-            redirect('login');
-        } else {
-            $this->session->sess_destroy();
-            $this->session->set_userdata(array('is_logged_in' => FALSE));
-            redirect('login');
-        }
+        $this->load->helper('cookie');
+        delete_cookie('autologin');
 
-	}
+        $this->session->sess_destroy();
+        $this->session->set_userdata(array('is_logged_in' => FALSE));
+            
+        // redirect('login');
+        $this->load->view('login');  
+
+    }
 
 	private function createToken(){
+                            //创建token（unique），利用MD5，email+user_agent
 		$email = $this->session->userdata('email');
-		$token = md5($email);
+                            $agent = $_SERVER['HTTP_USER_AGENT'];                                   
+		$token = md5($email.$agent);
 		$time = time();
 		$cookie = array(
 			'name' => 'autologin',
 			'value' => $token,
-			'expire' => 60*60*24*7
+                                          'expire' => 10
 		);
 		$this->input->set_cookie($cookie);	
 		//insert cookie token into database
-		$flag = $this->admin_model->saveToken($email,$token,$time);
-		if($flag == FALSE){
-			$this->input->delete_cookie('autologin');//cookie过期,将其删除
-		}
+		$this->admin_model->saveToken($email,$token,$time);
 	}
 
-	private function validToken(){
-		$token = $this->input->cookie('autologin');
-		if($token){
-			$email = $this->admin_model->get_email($token);		
-			$data = array(
-				'email' => $email,
-				'is_logged_in' => TRUE
-			);
-			$this->session->set_userdata($data);
-			redirect('home');
-		}
-		else{
-			$this->load->view('login');
-		}
-	}
+	
 }
 
 /* End of file login.php */
