@@ -6,7 +6,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>AdminCI Management System</title>
+    <title>重置密码</title>
 
     <!-- Core CSS - Include with every page -->
     <link href="<?php echo base_url('css/bootstrap.css'); ?>" rel="stylesheet">
@@ -25,25 +25,22 @@
             <div class="col-md-4 col-md-offset-4">
                 <div class="login-panel panel panel-default">
                     <div class="panel-heading">
-                        <h3 class="panel-title">Please Sign In</h3>
+                        <h3 class="panel-title">密码重置</h3>
                     </div>
                     <div class="panel-body">
                         <form role="form" action="<?php echo site_url('login/validate'); ?>" method="post">
                             <fieldset>
                                 <div class="form-group">
-                                      <input class="form-control" placeholder="E-mail" name="email" type="email" autofocus>
+                                      <input class="form-control" placeholder="确认邮箱" name="email" type="email" autofocus>
                                       
                                 </div>
                                 <div class="form-group">
-                                    <input class="form-control" placeholder="Password" name="password" type="password" value="">
+                                    <!-- <input class="form-control" placeholder="Password" name="password" type="password" value=""> -->
                                 </div>
-                                <div class="checkbox">
-                                    <label>
-                                        <input name="remember" type="checkbox" value="rememberme">Remember Me（30 seconds）
-                                    </label>
-                                </div>
+                                
                                 <div>
-                                    <button type="submit" class="btn btn-lg btn-success btn-block">Login</button>
+                                    <button type="submit" class="btn btn-lg btn-success btn-block">确认</button>
+                                    <button type="reset" class="btn btn-lg btn-warning btn-block">重置</button>
                                     
                                 </div>
                                 
@@ -55,7 +52,7 @@
                     </div>
 
                 </div>
-                   <a href="<?php echo site_url('login/reset'); ?>">Forgeten</a>
+                   
             </div>
         </div>
     </div>
