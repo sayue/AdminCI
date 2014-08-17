@@ -11,23 +11,6 @@ class Login extends CI_Controller
               }
     }
 
-    public function reset(){
-        $this->load->view('reset');
-        $this->load->helper('captcha');
-        $img_url = base_url('captcha');
-        $vals = array(
-            'word' => 'Random word',
-            'img_path' => './captcha/',
-            'img_url' => $img_url.'/',
-            'img_width' => '150',
-            'img_height' => 30,
-            'expiration' => 7200
-        );
-
-        $cap = create_captcha($vals);
-        echo $cap['image'];
-    }
-
     public function validate()
     {
         $email = $this->input->post('email',TRUE);

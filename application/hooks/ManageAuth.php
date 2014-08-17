@@ -14,10 +14,13 @@ class ManageAuth
 		{        
 			// 需要进行权限检查的URL            
 			$this->CI->load->library('session');            
-			if(!$this->CI->session->userdata('is_logged_in')) 
+			if(preg_match('/reset.*/', uri_string())){
+ 
+			}        
+			else if(!$this->CI->session->userdata('is_logged_in')) 
 			{        // 用户未登陆                
 				redirect('login');                    
-			}        
+			}
 		}            
 	}        
 }

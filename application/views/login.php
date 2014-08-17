@@ -55,7 +55,7 @@
                     </div>
 
                 </div>
-                   <a href="<?php echo site_url('login/reset'); ?>">Forgeten</a>
+                   <a href="<?php echo site_url('reset'); ?>">Forgeten</a>
             </div>
         </div>
     </div>

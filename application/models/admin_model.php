@@ -78,6 +78,43 @@ class Admin_model extends CI_Model
 		}
 	}
 
+	public function init_token($email,$resetime){
+		//初始化重置密码的token
+		$query = $this->db->get_where('admin',array('administrator' => $email));
+		if($query->num_rows() == 1){
+
+			$query_insert = $this->db->update('admin',array('repasstime' => $resetime),array('administrator' => $email));
+			$row = $query->row();
+			$id = $row->id;
+			$email = $row->administrator;
+			$pass = $row->password;
+			return md5($id.$email.$pass);
+		}else{
+			return FALSE;
+		}
+	}
+
+	public function valid_reset($email){
+		//验证重置密码的url链接是否过期
+		$query = $this->db->get_where('admin',array('administrator' => $email));
+		if($query->num_rows() == 1){
+			$row = $query->row();
+			return $row->repasstime;
+		}else{
+			return FALSE;
+		}
+	}
+
+	public function reset_pwd($email,$pwd){
+		//重置密码
+		$query = $this->db->update('admin',array('password' => $pwd),array('administrator' => $email));
+		if($this->db->affected_rows() > 0){
+			return TRUE;
+		}else{
+			return FALSE;
+		}
+	}
+
 
 }
 

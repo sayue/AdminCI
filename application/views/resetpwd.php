@@ -29,20 +29,24 @@
                         <h3 class="panel-title">密码重置</h3>
                     </div>
                     <div class="panel-body">
-                        <form role="form" action="<?php echo site_url('reset/captreset'); ?>" method="post">
+                        <form role="form" action="<?php echo site_url('reset/set'); ?>" method="post">
                             <fieldset>
                                 <div class="form-group">
-                                      <input class="form-control" placeholder="确认邮箱" name="email" type="email" autofocus>
+                                      <input class="form-control" placeholder="新密码" name="pwd" type="password" autofocus>
+                                      
+                                </div>
+                                <div class="form-group">
+                                      <input class="form-control" placeholder="确认新密码" name="repwd" type="password" autofocus>
                                       
                                 </div>
                                 <div class="form-group">
                                 
-                                <label class="" for="captcha">*Please enter the verication code shown below.</label>
+                                <!-- <label class="" for="captcha">*Please enter the verication code shown below.</label>
                                 <div id="captcha-wrap">
                                     
-                                    <img src="<?php echo site_url('reset'); ?>" alt="" id="captcha" />
+                                    <img src="<?php echo site_url('login/reset'); ?>" alt="" id="captcha" />
                                 </div>
-                                <input class="narrow text input" id="captcha" name="captchacode" type="text" placeholder="Verification Code"/>
+                                <input class="narrow text input" id="captcha" name="captchacode" type="text" placeholder="Verification Code"/> -->
                                    
                                 </div>
                                 
@@ -61,7 +65,7 @@
                     </div>
                     
                 </div>
-                   <a href="<?php echo site_url('login'); ?>">返回</a>
+                   <a href="<?php echo site_url('reset'); ?>">返回</a>
             </div>
         </div>
     </div>
