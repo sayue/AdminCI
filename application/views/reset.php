@@ -2,9 +2,7 @@
 <html>
 
 <head>
-    
-    <meta content="text/html; charset=utf-8" http-equiv="content-type">
-    <meta charset="utf-8">
+    <META http-equiv="content-type" content="text/html; charset=utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <title>重置密码</title>
@@ -40,7 +38,7 @@
                                 <label class="" for="captcha">*Please enter the verication code shown below.</label>
                                 <div id="captcha-wrap">
                                     
-                                    <img src="<?php echo site_url('reset'); ?>" alt="" id="captcha" />
+                                    <img src="<?php echo site_url('reset/resetview'); ?>" alt="" id="captcha" />
                                 </div>
                                 <input class="narrow text input" id="captcha" name="captchacode" type="text" placeholder="Verification Code"/>
                                    

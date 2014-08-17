@@ -19,8 +19,7 @@ class Captcha_code
 	
 	function show()
 	{
-		// ob_start();
-		// Header("Content-type: image/gif");
+		Header("Content-type: image/gif");
 		/*
 		* 初始化
 		*/
@@ -78,23 +77,19 @@ class Captcha_code
 		
 		//把验证码字符串写入session
 		
-		//$this->session->set_userdata(array($this->name =>$randcode));
+		//$this->session->set_userdata(array($this->name=>$randcode));
 		
 		$_SESSION[$this->name]=$randcode;
-		//echo $randcode;
 		/*绘图结束*/
-		ob_start();
-		Header("Content-type: image/gif");
 		Imagegif($im);
 		ImageDestroy($im);
 		/*绘图结束*/
 		$this->captcha = $randcode;
-
-
 	}
+
 	function getCaptcha()
-        {
-                return $this->captcha;
-        }
+        	{
+              	return $this->captcha;
+        	}
 }
 ?>

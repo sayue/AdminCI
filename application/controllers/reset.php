@@ -5,20 +5,16 @@ class Reset extends CI_Controller
 
         public function index(){
         
-        session_start();
-
-
-
-        $conf['name'] = 'sayue';
-        $this->load->library('captcha_code',$conf);
-        ob_start();
-        // Header("Content-type: image/gif");
-        $this->captcha_code->show();
-        $this->session->set_userdata('captcha',$this->captcha_code->getCaptcha());
-        
-        Header("Content-type: text/html");
         $this->load->view('reset');
     }
+
+        public function resetview(){
+        	$conf['name'] = 'sayue';
+        	$this->load->library('captcha_code',$conf);
+        	$this->captcha_code->show();
+        	$this->session->set_userdata('captcha',$this->captcha_code->getCaptcha());
+        }
+
     public function captreset(){
         $captchas = $this->session->userdata('captcha');
         $input_cha = $this->input->post('captchacode',TRUE);
@@ -44,7 +40,9 @@ class Reset extends CI_Controller
             $this->email->message('请将下列链接复制到浏览器'.$url);
 
             if($this->email->send()){
-                echo "重置密码邮件已发送.";
+                echo "重置密码邮件已发送，3秒后自动跳转。。。";
+                $url = site_url('login');
+                header("refresh:3; url=$url");
             }else{
                 echo $this->email->print_debugger();
             }
