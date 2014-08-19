@@ -71,7 +71,13 @@
 
     <!-- SB Admin Scripts - Include with every page -->
     <script src="<?php echo base_url('js/sb-admin.js'); ?>"></script>
-    
+    <script>
+
+    $("img[id='captcha']").click(function(){
+        this.src = "<?php echo site_url('reset/resetview')?>"+"?rand="+Math.random();
+    });
+
+    </script>
 </body>
 
 </html>

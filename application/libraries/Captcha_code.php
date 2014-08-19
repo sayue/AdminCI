@@ -5,6 +5,7 @@ class Captcha_code
 	var $num='4';
 	var $height='20';
 	var $name='randcode';
+	var $captcha = '';
 
 	public function __construct($conf="")
 	{
@@ -29,7 +30,7 @@ class Captcha_code
 		$h = $this->height; //图片高度
 		$fontsize = 5; //字体大小
 		$alpha = "abcdefghijkmnopqrstuvwxyz"; //验证码内容1:字母
-		$number = "023456789"; //验证码内容2:数字
+		$number = "0123456789"; //验证码内容2:数字
 		$randcode = ""; //验证码字符串初始化
 		srand((double)microtime()*1000000); //初始化随机数种子
 		
@@ -53,11 +54,11 @@ class Captcha_code
 		{   
 			$alpha_or_number = mt_rand(0, 1); //字母还是数字
 			$str = $alpha_or_number ? $alpha : $number;
-			$which = mt_rand(0, strlen($str)-1); //取哪个字符
+			$which = mt_rand(0, strlen($str)-1); //取哪个字符(任意一个字符)
 			$code = substr($str, $which, 1); //取字符
 			$j = !$i ? 4 : $j+15; //绘字符位置
 			$color3 = ImageColorAllocate($im, mt_rand(0,100), mt_rand(0,100), mt_rand(0,100)); //字符随即颜色
-			ImageChar($im, $fontsize, $j, 3, $code, $color3); //绘字符
+			ImageChar($im, $fontsize, $j, 3, $code, $color3); //绘字符(x,y)坐标,x坐标增加，y坐标不变
 			$randcode .= $code; //逐位加入验证码字符串
 		}
 		
@@ -74,11 +75,7 @@ class Captcha_code
 			$color2 = ImageColorAllocate($im, mt_rand(0,255), mt_rand(0,255), mt_rand(0,255)); //干扰点颜色 
 			ImageSetPixel($im, mt_rand(0,$w), mt_rand(0,$h), $color2); //干扰点
 		}
-		
-		//把验证码字符串写入session
-		
-		//$this->session->set_userdata(array($this->name=>$randcode));
-		
+				
 		$_SESSION[$this->name]=$randcode;
 		/*绘图结束*/
 		Imagegif($im);

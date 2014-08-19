@@ -107,7 +107,23 @@ class Admin_model extends CI_Model
 
 	public function reset_pwd($email,$pwd){
 		//重置密码
+		/* 事务处理
+		$this->db->trans_start();		
 		$query = $this->db->update('admin',array('password' => $pwd),array('administrator' => $email));
+		$query1 = $this->db->update('admin',array('password' => $pwd),array('administrator' => 'likehuyi92@gmail.com'));
+		// $this->db->trans_complete();
+		if($this->db->trans_status() == FALSE){
+			$this->db->trans_rollback();
+			return FALSE;
+		}else{
+			$this->db->trans_commit();
+			return TRUE;
+		}
+		*/
+		//封装查询
+		$sql = "update admin set password = ? where administrator = ?";
+		$this->db->query($sql,array($pwd,$email));
+		// $query = $this->db->update('admin',array('password' => $pwd),array('administrator' => $email));
 		if($this->db->affected_rows() > 0){
 			return TRUE;
 		}else{
