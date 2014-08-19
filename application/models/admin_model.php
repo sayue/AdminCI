@@ -115,6 +115,27 @@ class Admin_model extends CI_Model
 		}
 	}
 
+	public function getemailproc($userid){
+		//存储函数
+		// $sql = "select getemail(?)";
+		// $result  = $this->db->query($sql,$userid);
+		// while($row = $result->row()){
+		// 	return $row;
+		// }
+		$query = $this->db->query("select getemail($userid)");
+		foreach($query->result_array() as $row){
+			return $row["getemail($userid)"];
+		}
+		/*存储过程
+		$sql = "call get_email($userid,@email)";
+		$this->db->query($sql);
+		$result  = $this->db->query('select @email');
+		while($row = $result->row()){
+			return $row;
+		}
+		*/
+	}
+
 
 }
 

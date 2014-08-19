@@ -95,4 +95,17 @@ class Reset extends CI_Controller
     			}
     		}
     	}
+
+    	public function proc(){
+    		$this->load->view('proc');
+    		
+    	}
+
+    	public function showemail(){
+    		$userid = $this->input->post('userid',TRUE);
+    		$result['getemailproc'] = $this->admin_model->getemailproc($userid);
+    		// print_r ($result);
+    		// echo $result;
+    		$this->load->view('proc',$result);
+    	}
 }
